@@ -6,13 +6,13 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/11/26 14:34:11 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/11/26 15:47:15 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 #endif

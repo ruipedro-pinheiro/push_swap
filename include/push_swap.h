@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/11/26 17:11:30 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/11/27 15:27:30 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include <stdbool.h> 
+# include <stdbool.h>
 
 typedef struct stack
 {
@@ -23,8 +23,8 @@ typedef struct stack
 	int				position;
 	bool			cheapest;
 	bool			above_median;
-	struct stack	next;
-	struct stack	prev;
+	struct stack	*next;
+	struct stack	*prev;
 }					t_stack;
 
 #endif

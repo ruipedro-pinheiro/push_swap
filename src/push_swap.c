@@ -6,17 +6,29 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/11/26 15:48:33 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/11/27 16:52:23 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include "../libft/libft.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char	*working;
+	int	i;
+	int	j;
 
-	working = "Makefile working";
-	ft_printf("%s", working);
+	i = 0;
+	j = 0;
+	while (i <= argc && **argv)
+	{
+		while (argv[i][j])
+		{
+			ft_printf("%c", argv[i][j]);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+    return (1);
 }

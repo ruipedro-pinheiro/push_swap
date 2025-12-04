@@ -13,10 +13,12 @@
 #include "../include/push_swap.h"
 
 /*
-** Compte combien de nodes il y a sur une liste chainee.
-** @param node: le node existant dans une liste.
-** Fonction: Compte combien de nodes il y a sur toute la liste.
-** et retourne un int avec le nombre de nodes trouves
+** @brief Compte le nombre de nodes dans une liste chainee
+** @param node Pointeur vers un node de la liste
+** @return int Nombre total de nodes dans la liste
+** @note Parcourt la liste dans les deux sens (prev/next)
+** @warning `node` ne doit pas etre NULL
+** @see t_stack structure definie dans push_swap.h
 */
 int	ft_listcount(t_stack *node)
 {

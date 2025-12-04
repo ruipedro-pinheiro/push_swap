@@ -6,19 +6,17 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/04 18:02:23 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/04 19:49:24 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-#include "../libft/libft.h"
-
 /*
-** @brief Lit le parametre `argv` depuis le main et le formatte en int
-** @param argc  Compte combien de arguments sont donnes,
-** @param argv  Tableau 2D de tous les arguments donnes
-** @note `argc` compte en veriter les arguments depuis 1,
-** 0 etant le nom du programme.
+** @brief Parse les arguments de la ligne de commande
+** @param argc Nombre d'arguments passes au programme
+** @param argv Tableau de chaines contenant les arguments
+** @return int (a implementer: code de retour)
+** @note `argc` inclut le nom du programme (argv[0]),
+** donc argc - 1 = nombre d'arguments reels
 */
 int	arg_parser(int argc, char **argv)
 {
@@ -40,11 +38,13 @@ int	arg_parser(int argc, char **argv)
 }
 
 /*
-** @brief Fonction principale qui appelle le reste des fonctions necessaires
-** @param argc  Compte combien de arguments sont donnes
-** @param argv  Tableau 2D de tous les arguments donnes
-** @note `argc` compte en veriter les arguments depuis 1,
-** 0 etant le nom du programme.
+** @brief Point d'entree du programme push_swap
+** @param argc Nombre d'arguments (incluant le nom du programme)
+** @param argv Tableau de chaines des arguments
+** @return int 0 si succes, 1 si erreur
+** @see arg_parser() pour le parsing des arguments
+** @warning Les arguments doivent etre des entiers valides
+** @example ./push_swap 3 2 1
 */
 int	main(int argc, char **argv)
 {

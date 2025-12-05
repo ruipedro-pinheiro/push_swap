@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/05 15:49:48 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/05 17:51:32 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -44,7 +44,7 @@ int	arg_parser(char **argv)
 				free(input);
 			while (input[x][y])
 			{
-				output = ft_atoll(input[x]);
+				output = ft_atoll(&input[x][0]);
 				x++;
 			}
 			if (output < INT_MIN || output > INT_MAX)

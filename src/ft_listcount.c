@@ -20,28 +20,17 @@
 ** @warning `node` ne doit pas être NULL
 ** @see t_stack structure définie dans push_swap.h
 */
-int	ft_listcount(t_stack *node)
+int	ft_listcount(t_stack *stack)
 {
-	int		pos;
-	int		count;
-	t_stack	*ptr;
+	int	count;
 
-	ptr = NULL;
 	count = 0;
-	pos = node->position;
-	if (pos > 0)
+	if (!stack)
+		return (0);
+	while (stack)
 	{
-		count += pos;
-		if (node->next)
-			ptr->next = node->next;
-	}
-	if (node->next || node->prev)
-	{
-		while (node->prev)
-		{
-			ptr->next = node->next;
-			count++;
-		}
+		stack = stack->next;
+		count++;
 	}
 	return (count);
 }

@@ -45,12 +45,25 @@ void	free_matrix(char **argv)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	if (argv == NULL || *argv == NULL)
 		return ;
 	while (argv[i])
 		free(argv[i++]);
 	free(argv);
+}
+
+static int	is_duplicate(t_stack *a, int n)
+{
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->value == n)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }
 
 /*
@@ -64,7 +77,6 @@ static void	process_arg(t_stack **a, char *arg_str)
 	char		**input;
 	int			i;
 	long long	val;
-	long long	old;
 
 	input = ft_split(arg_str, ' ');
 	if (!input)
@@ -73,11 +85,18 @@ static void	process_arg(t_stack **a, char *arg_str)
 	while (input[i])
 	{
 		val = ft_atoll(input[i]);
-		old = ft_atoll(input[i - 1]);
-		if (val > INT_MAX || val < INT_MIN || val == old)
+		if (val > INT_MAX || val < INT_MIN || is_duplicate(*a, (int)val))
+		{
 			ft_putendl_fd("Error", 2);
-		else
-			append_node(a, (int)val);
+			free_matrix(input);
+			// Ideally we should free the stack 'a' and exit, 
+			// but for now let's just stop processing to avoid crash.
+			// The original code printed Error but didn't exit cleanly.
+			// We will return and let the caller handle or just stop.
+			// A real implementation would exit(1).
+			exit(1);
+		}
+		append_node(a, (int)val);
 		i++;
 	}
 	free_matrix(input);

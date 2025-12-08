@@ -35,9 +35,9 @@ typedef struct stack
 	int					position;
 	bool				cheapest;
 	bool				above_median;
-	struct s_stack_node	*target_node;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
+	struct stack		*target_node;
+	struct stack		*next;
+	struct stack		*prev;
 }						t_stack;
 void					append_node(t_stack **stack, int n);
 #endif

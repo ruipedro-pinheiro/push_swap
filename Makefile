@@ -11,7 +11,7 @@
 # - NAME: Name of the executable or library to create.
 # - SRCDIR: Directory where the source (.c) files are located.
 # - OBJDIR: Directory where object files will be stored.
-# - INCDIR: Directory containing header (.h) files for inclusion.
+# - INCLUDEDIR: Directory containing header (.h) files for inclusion.
 # - SRC: List of source files to compile.
 # - OBJ: Object files generated from the source files.
 # - CC: The compiler to use. Default is 'cc', but you can modify it if needed.
@@ -52,7 +52,7 @@ OBJDIR = obj
 INCDIR = include
 
 # Source Files
-SRC = push_swap.c 
+SRC = push_swap.c ft_listcount.c push_swap_operations.c add_stack_node.c
 OBJ = $(SRC:.c=.o)
 SRC := $(addprefix $(SRCDIR)/, $(SRC))
 OBJ := $(patsubst $(SRCDIR)/%, $(OBJDIR)/%, $(OBJ))
@@ -76,9 +76,9 @@ CFLAGS = -Wall -Wextra -Werror -I$(INCDIR) -g3 -I$(LIBFT_INCLUDE)
 # Compilation mode (silent by default, set VERBOSE=1 to show commands)
 VERBOSE ?= 0
 ifeq ($(VERBOSE),1)
-  V := 
+	V := 
 else
-  V := @
+	V := @
 endif
 
 # Colors

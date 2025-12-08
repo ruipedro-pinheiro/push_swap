@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 12:54:58 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 14:58:36 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,6 +26,8 @@ int	ft_listcount(t_stack *node)
 	int		count;
 	t_stack	*ptr;
 
+	ptr = NULL;
+	count = 0;
 	pos = node->position;
 	if (pos > 0)
 	{

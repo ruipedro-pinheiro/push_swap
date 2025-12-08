@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 14:02:50 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 14:51:06 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -25,7 +25,7 @@
 ** 2. ERROR HANDLING & MEMORY
 **    [ ] Implement free_stack(t_stack **stack) to free the list
 **    [ ] Implement error_exit(t_stack **stack) that prints "Error\n" and frees
-**    [ ] Check for DUPLICATES in process_arg (crucial!)
+**    [DONE] Check for DUPLICATES in process_arg (crucial!)
 **
 ** 3. SORTING ALGORITHM (src/sort/)
 **    [ ] Implement sort_three(t_stack **a) for small stacks
@@ -64,6 +64,7 @@ static void	process_arg(t_stack **a, char *arg_str)
 	char		**input;
 	int			i;
 	long long	val;
+	long long	old;
 
 	input = ft_split(arg_str, ' ');
 	if (!input)
@@ -72,7 +73,8 @@ static void	process_arg(t_stack **a, char *arg_str)
 	while (input[i])
 	{
 		val = ft_atoll(input[i]);
-		if (val > INT_MAX || val < INT_MIN)
+		old = ft_atoll(input[i - 1]);
+		if (val > INT_MAX || val < INT_MIN || val == old)
 			ft_putendl_fd("Error", 2);
 		else
 			append_node(a, (int)val);

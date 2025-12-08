@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:49:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 13:02:24 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 13:10:09 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,15 +15,21 @@
 
 void	add_stack_node(char **argv)
 {
+	int		i;
+	int		j;
 	t_stack	node;
 	t_stack	current;
 	t_stack	*ptr;
 
-	while (argv[i][j])
+	while (argv[i][0])
 	{
-		current->value = argv[i][j++];
-		current->position = i;
+		while (argv[i][j])
+		{
+			current->value = argv[i][j];
+			current->position = i;
+			j++;
+		}
+		j = 0;
 		i++;
-		current->next = node->next;
 	}
 }

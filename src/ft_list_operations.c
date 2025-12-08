@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 16:12:28 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:29:44 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,13 +38,14 @@ int	ft_listcount(t_stack *stack)
 
 void	free_stack(t_stack **stack)
 {
-	t_stack	**tmp;
+	t_stack	*next_node;
+	t_stack	*current;
 
-	while (stack)
+	while (current)
 	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
+		next_node = ptr->next;
+		current = next_node;
+		free(current);
 	}
 }
 

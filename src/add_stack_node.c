@@ -10,26 +10,49 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include "libft/libft.h"
-#include "push_swap.h"
 
-void	add_stack_node(char **argv)
+#include "../include/push_swap.h"
+
+/*
+** @brief Finds the last node of the stack.
+** @param head Pointer to the first node.
+** @return Pointer to the last node, or NULL if empty.
+*/
+static t_stack	*find_last_node(t_stack *head)
 {
-	int		i;
-	int		j;
-	t_stack	node;
-	t_stack	current;
-	t_stack	*ptr;
+	if (!head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
+}
 
-	while (argv[i][0])
+/*
+** @brief Appends a new node with value 'n' to the stack.
+** @param stack Pointer to the stack head.
+** @param n The integer value to add.
+*/
+void	append_node(t_stack **stack, int n)
+{
+	t_stack	*node;
+	t_stack	*last_node;
+
+	if (!stack)
+		return ;
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return ;
+	node->next = NULL;
+	node->value = n;
+	if (*stack == NULL)
 	{
-		while (argv[i][j])
-		{
-			current->value = argv[i][j];
-			current->position = i;
-			j++;
-		}
-		j = 0;
-		i++;
+		*stack = node;
+		node->prev = NULL;
+	}
+	else
+	{
+		last_node = find_last_node(*stack);
+		last_node->next = node;
+		node->prev = last_node;
 	}
 }

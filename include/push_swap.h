@@ -6,7 +6,11 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/12/08 14:53:03 by rpinheir         ###   ########.fr       */
+=======
+/*   Updated: 2025/12/08 14:36:31 by rpinheir         ###   ########.fr       */
+>>>>>>> 6f55bc8a8414c4d0b66e33152fd38364a9806e0c
 /*                                                                            */
 /******************************************************************************/
 
@@ -39,6 +43,5 @@ typedef struct stack
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;
 }						t_stack;
-
 void					append_node(t_stack **stack, int n);
 #endif

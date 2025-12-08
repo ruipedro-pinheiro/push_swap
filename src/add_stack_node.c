@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:49:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 15:12:44 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:17:31 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -51,7 +51,7 @@ void	append_node(t_stack **stack, int n)
 	else
 	{
 		last_node = find_last_node(*stack);
-		last_node->next = last_node;
+		last_node->next = last_node+;
 		node->prev = last_node;
 	}
 }

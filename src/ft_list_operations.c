@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 16:32:32 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:39:52 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -41,12 +41,12 @@ void	free_stack(t_stack **stack)
 	t_stack	*next_node;
 	t_stack	*current;
 
-	current = **stack;
+	current = *stack;
 	while (current)
 	{
 		next_node = current->next;
-		current = next_node;
 		free(current);
+		current = next_node;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 16:29:44 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:32:32 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -41,9 +41,10 @@ void	free_stack(t_stack **stack)
 	t_stack	*next_node;
 	t_stack	*current;
 
+	current = **stack;
 	while (current)
 	{
-		next_node = ptr->next;
+		next_node = current->next;
 		current = next_node;
 		free(current);
 	}
@@ -51,6 +52,7 @@ void	free_stack(t_stack **stack)
 
 void	error_exit(t_stack **stack)
 {
+	if (stack)
+		free_stack(stack);
 	ft_putendl_fd("Error", 1);
-	free_stack(stack);
 }

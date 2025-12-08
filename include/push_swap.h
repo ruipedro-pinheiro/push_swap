@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 15:23:53 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:11:36 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -30,14 +30,15 @@
 */
 typedef struct stack
 {
-	int					value;
-	int					push_price;
-	int					position;
-	bool				cheapest;
-	bool				above_median;
-	struct stack		*target_node;
-	struct stack		*next;
-	struct stack		*prev;
-}						t_stack;
-void					append_node(t_stack **stack, int n);
+	int				value;
+	int				push_price;
+	int				position;
+	bool			cheapest;
+	bool			above_median;
+	struct stack	*target_node;
+	struct stack	*next;
+	struct stack	*prev;
+}					t_stack;
+void				append_node(t_stack **stack, int n);
+void				free_stack(t_stack **stack);
 #endif

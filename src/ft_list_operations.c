@@ -1,16 +1,17 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listcount.c                                     :+:      :+:    :+:   */
+/*   ft_list_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 14:58:36 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:12:28 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/push_swap.h"
+#include "push_swap.h"
 
 /*
 ** @brief Compte le nombre de nodes dans une liste chaînée
@@ -33,4 +34,22 @@ int	ft_listcount(t_stack *stack)
 		count++;
 	}
 	return (count);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	**tmp;
+
+	while (stack)
+	{
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
+	}
+}
+
+void	error_exit(t_stack **stack)
+{
+	ft_putendl_fd("Error", 1);
+	free_stack(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 14:51:06 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:12:12 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,7 +14,7 @@
 #include "../libft/libft.h"
 
 /*
-** TODO: PROJECT ROADMAP
+** TODO
 **
 ** 1. OPERATIONS (src/operations/)
 **    [ ] Implement swap (sa, sb, ss)
@@ -23,7 +23,7 @@
 **    [ ] Implement reverse rotate (rra, rrb, rrr)
 **
 ** 2. ERROR HANDLING & MEMORY
-**    [ ] Implement free_stack(t_stack **stack) to free the list
+**    [DONE] Implement free_stack(t_stack **stack) to free the list
 **    [ ] Implement error_exit(t_stack **stack) that prints "Error\n" and frees
 **    [DONE] Check for DUPLICATES in process_arg (crucial!)
 **
@@ -89,11 +89,7 @@ static void	process_arg(t_stack **a, char *arg_str)
 		{
 			ft_putendl_fd("Error", 2);
 			free_matrix(input);
-			// Ideally we should free the stack 'a' and exit, 
-			// but for now let's just stop processing to avoid crash.
-			// The original code printed Error but didn't exit cleanly.
-			// We will return and let the caller handle or just stop.
-			// A real implementation would exit(1).
+			free_stack(a);
 			exit(1);
 		}
 		append_node(a, (int)val);

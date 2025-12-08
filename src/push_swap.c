@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/05 17:51:32 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:52:20 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -22,7 +22,7 @@
 ** @note `argc` inclut le nom du programme (argv[0]),
 ** donc argc - 1 = nombre d'arguments réels
 */
-int	arg_parser(char **argv)
+void	arg_parser(char **argv)
 {
 	int			i;
 	int			x;
@@ -30,36 +30,30 @@ int	arg_parser(char **argv)
 	long long	output;
 	char		**input;
 
-	i = 0;
+	i = 1;
 	x = 0;
 	y = 0;
 	output = 0;
-	while (argv[1][i])
-	// 1 ici = le premier argument réellement pas le nom du programme
+	while (argv[i][i])
 	{
 		if (ft_isdigit(argv[1][i]) == 0)
 		{
 			input = ft_split(argv[1], ' ');
 			if (!input)
 				free(input);
+			if (ft_atoll(&input[x][0] < INT_MIN
+				|| ft_atoll(&input[x][0] > INT_MAX)
+				ft_putendl_fd("Error", 1);
 			while (input[x][y])
 			{
-				output = ft_atoll(&input[x][0]);
+				##node_in_stack = ft_atoll(&input[x][0]);
 				x++;
 			}
-			if (output < INT_MIN || output > INT_MAX)
-				ft_putendl_fd("Error", 1);
 		}
 		else
 		{
-			/* TODO: on input les int SANS parser de ascii en int
-			**	Cela n'est pas nécessaire, vu qu'on *SAIT*
-			**	que c'est des int et pas du ascii
-			*/
 		}
-		i++;
 	}
-	return (output);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 16:14:53 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:44:02 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -24,7 +24,7 @@
 **
 ** 2. ERROR HANDLING & MEMORY
 **    [DONE] Implement free_stack(t_stack **stack) to free the list
-**    [ ] Implement error_exit(t_stack **stack) that prints "Error\n" and frees
+**    [DONE] Implement error_exit(t_stack **stack) that prints "Error\n" and frees
 **    [DONE] Check for DUPLICATES in process_arg (crucial!)
 **
 ** 3. SORTING ALGORITHM (src/sort/)

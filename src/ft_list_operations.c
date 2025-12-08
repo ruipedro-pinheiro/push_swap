@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 16:39:52 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:42:38 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -54,5 +54,5 @@ void	error_exit(t_stack **stack)
 {
 	if (stack)
 		free_stack(stack);
-	ft_putendl_fd("Error", 1);
+	ft_putendl_fd("Error", 2);
 }

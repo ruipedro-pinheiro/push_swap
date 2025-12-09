@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   add_stack_node.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rpinheir rpinheir@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:49:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 15:17:31 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 18:05:14 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 

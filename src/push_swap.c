@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 16:57:26 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 19:13:53 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -20,7 +20,7 @@
 **    [DONE] Implement swap (sa, sb, ss)
 **    [DONE] Implement push (pa, pb)
 **    [DONE] Implement rotate (ra, rb, rr)
-**    [ ] Implement reverse rotate (rra, rrb, rrr)
+**    [DONE] Implement reverse rotate (rra, rrb, rrr)
 **
 ** 2. ERROR HANDLING & MEMORY
 **    [DONE] Implement free_stack(t_stack **stack) to free the list

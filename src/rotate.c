@@ -6,12 +6,14 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:29:40 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 15:59:19 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 19:03:39 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/push_swap.h"
 
+// le premier devient dernier
+// dernier  devient avant dernier
 void	rotate(t_stack **stack)
 {
 	t_stack	*node;
@@ -21,12 +23,12 @@ void	rotate(t_stack **stack)
 
 	i = 0;
 	first_node = *stack;
-	node = first_node;
-	while (node->next != first_node)
+	node = first_node->next;
+	while (node != first_node)
 	{
 		tmp = node;
 		node = node->next;
-		node->next->position = i;
+		node->position = i;
 		i++;
 	}
 }

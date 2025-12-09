@@ -5,7 +5,7 @@ OBJDIR = obj
 INCDIR = include
 
 # Source Files
-SRC = push_swap.c ft_list_operations.c push_swap_operations.c add_stack_node.c
+SRC = push_swap.c swap.c push.c rotate.c add_stack_node.c ft_list_operations.c
 OBJ = $(SRC:.c=.o)
 SRC := $(addprefix $(SRCDIR)/, $(SRC))
 OBJ := $(patsubst $(SRCDIR)/%, $(OBJDIR)/%, $(OBJ))

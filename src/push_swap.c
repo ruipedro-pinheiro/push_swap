@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/08 16:44:02 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 16:57:26 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -17,14 +17,15 @@
 ** TODO
 **
 ** 1. OPERATIONS (src/operations/)
-**    [ ] Implement swap (sa, sb, ss)
-**    [ ] Implement push (pa, pb)
-**    [ ] Implement rotate (ra, rb, rr)
+**    [DONE] Implement swap (sa, sb, ss)
+**    [DONE] Implement push (pa, pb)
+**    [DONE] Implement rotate (ra, rb, rr)
 **    [ ] Implement reverse rotate (rra, rrb, rrr)
 **
 ** 2. ERROR HANDLING & MEMORY
 **    [DONE] Implement free_stack(t_stack **stack) to free the list
-**    [DONE] Implement error_exit(t_stack **stack) that prints "Error\n" and frees
+**    [DONE] Implement error_exit(t_stack **stack)
+**		that prints "Error\n" and frees
 **    [DONE] Check for DUPLICATES in process_arg (crucial!)
 **
 ** 3. SORTING ALGORITHM (src/sort/)

@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:26:35 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 13:49:33 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:17:30 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -20,7 +20,7 @@ void	swap(t_stack **stack)
 	t_stack	*tmp;
 
 	tmp = *stack;
-	if (tmp || tmp->next)
+	if (!tmp || !tmp->next)
 		return ;
 	first_node = tmp;
 	second_node = first_node->next;
@@ -28,7 +28,7 @@ void	swap(t_stack **stack)
 	first_node->next = second_node->next;
 	first_node->prev = second_node;
 	second_node->next = ptr;
-	second_node->prev = NULL;
+	second_node->prev = NULL; // FIXME: null on a circular list ?!
 }
 
 void	sa(t_stack **a)

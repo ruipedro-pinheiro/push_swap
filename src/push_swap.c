@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 19:34:01 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 20:18:58 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -17,16 +17,21 @@
 ** TODO-LIST
 **
 ** 1. OPERATIONS (src/operations/)
-**    [DONE] Implement swap (sa, sb, ss)
-**    [DONE] Implement push (pa, pb)
-**    [DONE] Implement rotate (ra, rb, rr)
-**    [DONE] Implement reverse rotate (rra, rrb, rrr)
+**    [FIXME:] Implement swap (sa, sb,
+**	ss) -- Logic breaks circular list; ss is too verbose.
+**    [FIXME:] Implement push (pa,
+**	pb) -- Logic merges lists instead of moving nodes.
+**    [FIXME:] Implement rotate (ra, rb, rr) -- Only updates indices,
+**	doesn't move head.
+**    [FIXME:] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
+**	doesn't move head.
 **
 ** 2. ERROR HANDLING & MEMORY
 **    [DONE] Implement free_stack(t_stack **stack) to free the list
 **    [DONE] Implement error_exit(t_stack **stack)
 **		that prints "Error\n" and frees
 **    [DONE] Check for DUPLICATES in process_arg (crucial!)
+**    [TODO:]ft_atoll should not accept invalid "12abc".
 **
 ** 3. SORTING ALGORITHM (src/sort/)
 **    [ ] Implement sort_three(t_stack **a) for small stacks
@@ -37,7 +42,9 @@
 **        - set_cheapest (calculate cost)
 **        - push_swap (main algo loop)
 **
-**	4. LINKED LIST
+**	4. LINKED LIST IMPLEMENTATION
+**		[FIXME] Modify `append_node` to create a CIRCULAR doubly linked list.
+**          Current implementation is linear (conflicts with operations).
 **		[] Implement a new list_add_node(t_staack **stack)
 **				Implement a function that will create nodes with:
 **				[] Value from arg_parser

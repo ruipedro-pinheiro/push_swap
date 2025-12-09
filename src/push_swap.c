@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 19:13:59 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 19:34:01 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,7 +14,7 @@
 #include "../libft/libft.h"
 
 /*
-** TODO
+** TODO-LIST
 **
 ** 1. OPERATIONS (src/operations/)
 **    [DONE] Implement swap (sa, sb, ss)
@@ -36,6 +36,19 @@
 **        - current_index (update positions)
 **        - set_cheapest (calculate cost)
 **        - push_swap (main algo loop)
+**
+**	4. LINKED LIST
+**		[] Implement a new list_add_node(t_staack **stack)
+**				Implement a function that will create nodes with:
+**				[] Value from arg_parser
+**				[] Position from a int variable per example when doing nodes
+**				[] Next that must be allways linked to first_node (if existing)
+**				[] Prev pointer so we can count and read all link list nodes
+**				With this, the stack will be a circular stack:
+**						first->prev = last node AND last->next = first node
+**						1st node -> 2nd node ... -> last node -> first node ...
+**
+**
 */
 
 /*

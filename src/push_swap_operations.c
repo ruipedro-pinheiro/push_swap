@@ -6,12 +6,11 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 17:26:35 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 12:19:10 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/09 12:57:59 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/push_swap.h"
-
 
 void	sa(t_stack **stack)
 {

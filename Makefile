@@ -36,7 +36,7 @@ endif
 
 # Colors
 RED     := "\033[1;31m"
-GREEN   := "\033[1;32m"
+GREEN   := "\033[0;32m"
 RESET   := "\033[0m"
 
 
@@ -71,6 +71,7 @@ $(LIBFT):
 clean:
 	$(V)echo $(RED)'[$(NAME)] Cleaning objects'd$(RESET)
 	$(V)rm -rf $(OBJDIR)
+	$(V)$(MAKE) --silent -C $(LIBFT_DIR) clean
 
 fclean: clean
 	$(V)echo $(RED)'[$(NAME)] Cleaning all files'$(RESET)
@@ -79,9 +80,5 @@ fclean: clean
 
 re: fclean all
 
-# Makefile Reconfiguration 
-regen:
-	makemyfile
-
-.PHONY: all clean fclean re bonus regen
+.PHONY: all clean fclean re
 .DEFAULT_GOAL := all

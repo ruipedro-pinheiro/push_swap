@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:40:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 14:53:58 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 16:34:49 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,10 +38,12 @@ void	push(t_stack **dest, t_stack **source)
 	*dest = first_node_source;
 	first_node_dest->position = 1;
 	first_node_source->position = 0;
-	first_node_dest->prev->position++; // FIXME
+	first_node_dest->prev->position++;
+	// FIXME il faut modifer tout le reste de la liste et pas un seul
 	*source = first_node_source->next;
 	first_node_source->next->position = 0;
-	first_node_source->next->position--; // FIXME
+	first_node_source->next->position--;
+	// FIXME il faut modifer tout le reste de la liste et pas un seul
 }
 
 void	pa(t_stack **a, t_stack **b)

@@ -23,12 +23,13 @@ Or as a single string:
 
 ## Features
 - **Argument Parsing**: Handles integers, checks for non-numeric input, integer overflows/underflows, and duplicates.
-- **Stack Management**: Dynamically allocates nodes for the stack.
+- **Stack Management**: Dynamically allocates nodes for the stack. It works via double circular linked lists, it makes the programm more efficient, using less operations with other tips but also easier to understand and to code (if you know what you are doing)
 
 ## Structure
 - `src/`: Source files.
-- `include/`: Header files.
-- `libft/`: Custom C library.
+- `include/`: Main header file with must usefull functions (only really needed functions).
+- `libft/`: 42 Custom lib from libc.
+- `obj/`: .obj files created to make the executable
 
 ## Author
 rpinheir

@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:40:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 17:44:07 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 17:50:20 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -38,10 +38,7 @@ void	push(t_stack **dest, t_stack **source)
 	first_node_dest->prev = first_node_source;
 	first_node_dest->prev->next = first_node_source;
 	*dest = first_node_source;
-	first_node_dest->position = 1;
-	first_node_source->position = 0;
 	*source = first_node_source->next;
-	first_node_source->next->position = 0;
 	pos_change(source);
 	pos_change(dest);
 }

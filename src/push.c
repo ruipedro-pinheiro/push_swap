@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:40:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 15:34:14 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:53:58 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -16,20 +16,32 @@
 ** @brief Push function that will move top element in stack to another
 ** @param a the stack a
 ** @param b the stack b
-** @note This is the general function.
-**      The real push functions for specific stacks are above
+** 	@note `first_node_source->next = first_node_dest`
+	// On dit que le node apres le node source
+	//est AVANT le premier node de la stack dest
+	`first_node_dest->prev = first_node_source`
+	// On dit au ancien premier node de la
+	// stack dest qu'il y a le nouveau node avant
 */
-void	push(t_stack **a, t_stack **b)
+void	push(t_stack **dest, t_stack **source)
 {
-	t_stack	*first_node_a;
-	t_stack	*first_node_b;
+	t_stack	*first_node_dest;
+	t_stack	*first_node_source;
 
-	first_node_a = *a;
-	first_node_b = *b;
-	first_node_b->prev = NULL;
-	first_node_b->next = first_node_a;
-	first_node_a->prev = first_node_b;
-	first_node_b->position = 1; // 0 ou 1 ?
+	first_node_dest = *dest;
+	first_node_source = *source;
+	first_node_source->prev = first_node_dest->prev;
+	// on link le dernier element de la stack dest au node de la stack source
+	first_node_source->next = first_node_dest;
+	first_node_dest->prev = first_node_source;
+	first_node_dest->prev->next = first_node_source;
+	*dest = first_node_source;
+	first_node_dest->position = 1;
+	first_node_source->position = 0;
+	first_node_dest->prev->position++; // FIXME
+	*source = first_node_source->next;
+	first_node_source->next->position = 0;
+	first_node_source->next->position--; // FIXME
 }
 
 void	pa(t_stack **a, t_stack **b)

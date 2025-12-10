@@ -3,11 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+
+/*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+      
 	+#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 13:00:30 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 13:00:33 by rpinheir         ###   ########.ch       */
+/*   Created: 2025/12/10 14:22:40 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/12/10 14:22:47 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	reverse_rotate(t_stack **stack)
 		node = node->prev;
 		i++;
 	}
+	*stack = first_node->prev;
 }
 
 void	rra(t_stack **a)

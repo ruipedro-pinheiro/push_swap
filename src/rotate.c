@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 15:29:40 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 14:14:55 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:22:05 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -31,6 +31,7 @@ void	rotate(t_stack **stack)
 		node->position = i;
 		i++;
 	}
+	*stack = first_node->prev;
 }
 
 void	ra(t_stack **a)

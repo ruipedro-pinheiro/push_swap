@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 14:11:52 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 15:32:58 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,24 +14,24 @@
 #include "../libft/libft.h"
 
 /*
-** TODO-LIST
+** T0D0-LIST
 **
 ** 1. OPERATIONS (src/operations/)
-**    [FIXME:] Implement swap (sa, sb,
-**	ss) -- Logic breaks circular list; ss is too verbose.
-**    [FIXME:] Implement push (pa,
+**    [x] Implement swap (sa, sb,
+**	ss)
+**    [x] Implement push (pa,
 **	pb) -- Logic merges lists instead of moving nodes.
-**    [FIXME:] Implement rotate (ra, rb, rr) -- Only updates indices,
+**    [x] Implement rotate (ra, rb, rr) -- Only updates indices,
 **	doesn't move head.
-**    [FIXME:] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
+**    [x] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
 **	doesn't move head.
 **
 ** 2. ERROR HANDLING & MEMORY
-**    [DONE] Implement free_stack(t_stack **stack) to free the list
-**    [DONE] Implement error_exit(t_stack **stack)
+**    [x] Implement free_stack(t_stack **stack) to free the list
+**    [x] Implement error_exit(t_stack **stack)
 **		that prints "Error\n" and frees
-**    [DONE] Check for DUPLICATES in process_arg (crucial!)
-**    [TODO] Implement strict syntax check in process_arg.
+**    [] Check for DUPLICATES in process_arg (crucial!)
+**    [x] Implement strict syntax check in process_arg.
 **           Method: Pointer walk. Skip sign, while(isdigit) ptr++,
 **           if (*ptr) -> Error. Do this before ft_atoll.
 **
@@ -45,19 +45,8 @@
 **        - push_swap (main algo loop)
 **
 **	4. LINKED LIST IMPLEMENTATION
-**		[FIXME:] Modify `append_node` to create a CIRCULAR doubly linked list.
-**          Current implementation is linear (conflicts with operations).
-**		[] Implement a new list_add_node(t_staack **stack)
-**				Implement a function that will create nodes with:
-**				[] Value from arg_parser
-**				[] Position from a int variable per example when doing nodes
-**				[] Next that must be allways linked to first_node (if existing)
-**				[] Prev pointer so we can count and read all link list nodes
-**				With this, the stack will be a circular stack:
-**						first->prev = last node AND last->next = first node
-**						1st node -> 2nd node ... -> last node -> first node ...
-**
-**
+** 		FIXME Modify `append_node` to create a CIRCULAR doubly linked list.
+**         [] Current implementation is linear (conflicts with operations).
 */
 
 /*
@@ -118,7 +107,6 @@ static void	process_arg(t_stack **a, char *arg_str)
 			ft_putendl_fd("Error", 2);
 			free_matrix(input);
 			free_stack(a);
-			exit(1);
 		}
 		append_node(a, (int)val);
 	}

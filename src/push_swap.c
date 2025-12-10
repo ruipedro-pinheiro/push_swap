@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 13:59:13 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 14:11:52 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -31,7 +31,9 @@
 **    [DONE] Implement error_exit(t_stack **stack)
 **		that prints "Error\n" and frees
 **    [DONE] Check for DUPLICATES in process_arg (crucial!)
-**    [DONE]ft_atoll should not accept invalid "12abc".
+**    [TODO] Implement strict syntax check in process_arg.
+**           Method: Pointer walk. Skip sign, while(isdigit) ptr++,
+**           if (*ptr) -> Error. Do this before ft_atoll.
 **
 ** 3. SORTING ALGORITHM (src/sort/)
 **    [ ] Implement sort_three(t_stack **a) for small stacks
@@ -43,7 +45,7 @@
 **        - push_swap (main algo loop)
 **
 **	4. LINKED LIST IMPLEMENTATION
-**		[FIXME] Modify `append_node` to create a CIRCULAR doubly linked list.
+**		[FIXME:] Modify `append_node` to create a CIRCULAR doubly linked list.
 **          Current implementation is linear (conflicts with operations).
 **		[] Implement a new list_add_node(t_staack **stack)
 **				Implement a function that will create nodes with:
@@ -96,17 +98,22 @@ static int	is_duplicate(t_stack *a, int n)
 static void	process_arg(t_stack **a, char *arg_str)
 {
 	char		**input;
-	int			i;
 	long long	val;
+	int			i;
 
 	input = ft_split(arg_str, ' ');
 	if (!input)
 		return ;
-	i = 0;
-	while (input[i])
+	i = -1;
+	while (input[++i])
 	{
+		arg_str = input[i];
+		if (*arg_str == '+' || *arg_str == '-')
+			arg_str++;
+		while (ft_isdigit(*arg_str))
+			arg_str++;
 		val = ft_atoll(input[i]);
-		if (val > INT_MAX || val < INT_MIN || is_duplicate(*a, (int)val))
+		if (*arg_str || val > INT_MAX || val < INT_MIN || is_duplicate(*a, val))
 		{
 			ft_putendl_fd("Error", 2);
 			free_matrix(input);
@@ -114,7 +121,6 @@ static void	process_arg(t_stack **a, char *arg_str)
 			exit(1);
 		}
 		append_node(a, (int)val);
-		i++;
 	}
 	free_matrix(input);
 }

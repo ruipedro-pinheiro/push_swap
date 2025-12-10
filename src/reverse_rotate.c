@@ -6,14 +6,17 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+
 	+#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:03:49 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 19:12:08 by rpinheir         ###   ########.ch       */
+/*   Created: 2025/12/10 13:00:30 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/12/10 13:00:33 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// le dernier devient premier
+/* @brief le dernier devient premier
+**@note `first_node = *stack;` // on connait donc le node qui commence la stack
+**@note `first_node->prev;`    // on commence avec le dernier
+*/
 void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*node;
@@ -22,8 +25,8 @@ void	reverse_rotate(t_stack **stack)
 	int		i;
 
 	i = 0;
-	first_node = *stack;     // on connait donc le node qui commence la stack
-	node = first_node->prev; // on commence avec le dernier
+	first_node = *stack;
+	node = first_node->prev;
 	while (node->prev != first_node->prev)
 	{
 		tmp = node;

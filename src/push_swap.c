@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 20:19:11 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:59:13 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -31,7 +31,7 @@
 **    [DONE] Implement error_exit(t_stack **stack)
 **		that prints "Error\n" and frees
 **    [DONE] Check for DUPLICATES in process_arg (crucial!)
-**    [TODO:]ft_atoll should not accept invalid "12abc".
+**    [DONE]ft_atoll should not accept invalid "12abc".
 **
 ** 3. SORTING ALGORITHM (src/sort/)
 **    [ ] Implement sort_three(t_stack **a) for small stacks

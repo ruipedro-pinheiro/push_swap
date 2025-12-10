@@ -6,25 +6,11 @@
 /*   By: rpinheir rpinheir@student.42lausanne.ch    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:49:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 19:36:17 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:51:53 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/push_swap.h"
-
-/*
-** @brief Finds the last node of the stack.
-** @param head Pointer to the first node.
-** @return Pointer to the last node, or NULL if empty.
-*/
-static t_stack	*find_last_node(t_stack *head)
-{
-	if (!head)
-		return (NULL);
-	while (head->next)
-		head = head->next;
-	return (head);
-}
 
 /*
 ** @brief Appends a new node with value 'n' to the stack.
@@ -35,14 +21,17 @@ void	append_node(t_stack **stack, int n)
 {
 	t_stack	*node;
 	t_stack	*last_node;
+	int		i;
 
+	i = 0;
 	if (!stack)
 		return ;
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		return ;
-	node->next = NULL;
+	node->next = *stack;
 	node->value = n;
+	node->position = i;
 	if (*stack == NULL)
 	{
 		*stack = node;
@@ -50,7 +39,8 @@ void	append_node(t_stack **stack, int n)
 	}
 	else
 	{
-		last_node = find_last_node(*stack);
+		node = *stack;
+		last_node = node->prev;
 		last_node->next = node;
 		node->prev = last_node;
 	}

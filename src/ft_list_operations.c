@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/09 16:33:53 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 13:00:18 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -21,16 +21,20 @@
 ** @warning `node` ne doit pas être NULL
 ** @see t_stack structure définie dans push_swap.h
 */
-int	ft_listcount(t_stack *stack)
+int	ft_listcount(t_stack **stack)
 {
-	int	count;
+	int		count;
+	t_stack	*first_node;
+	t_stack	*node;
 
+	node = *stack;
+	first_node = *stack;
 	count = 0;
-	if (!stack)
-		return (0);
-	while (stack)
+	if (!node)
+		error_exit(&node);
+	while (node != first_node->prev)
 	{
-		stack = stack->next;
+		node = node->next;
 		count++;
 	}
 	return (count);

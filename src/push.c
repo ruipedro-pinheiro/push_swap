@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:40:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 16:34:49 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 17:09:44 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -27,6 +27,7 @@ void	push(t_stack **dest, t_stack **source)
 {
 	t_stack	*first_node_dest;
 	t_stack	*first_node_source;
+	t_stack	*node;
 
 	first_node_dest = *dest;
 	first_node_source = *source;
@@ -38,12 +39,12 @@ void	push(t_stack **dest, t_stack **source)
 	*dest = first_node_source;
 	first_node_dest->position = 1;
 	first_node_source->position = 0;
-	first_node_dest->prev->position++;
-	// FIXME il faut modifer tout le reste de la liste et pas un seul
+	// first_node_dest->prev->position++;
 	*source = first_node_source->next;
 	first_node_source->next->position = 0;
-	first_node_source->next->position--;
-	// FIXME il faut modifer tout le reste de la liste et pas un seul
+	pos_change(source);
+	pos_change(dest);
+	// first_node_source->next->position--;
 }
 
 void	pa(t_stack **a, t_stack **b)
@@ -56,4 +57,18 @@ void	pb(t_stack **a, t_stack **b)
 {
 	push(b, a);
 	write(1, "pb\n", 3);
+}
+
+void	pos_change(t_stack **stack)
+{
+	t_stack	*node;
+	int		i;
+
+	i = 0;
+	node = *stack;
+	while (node->prev != *stack)
+	{
+		node->position = i;
+		i++;
+	}
 }

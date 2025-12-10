@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 16:36:31 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 17:09:54 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,38 +14,32 @@
 #include "../libft/libft.h"
 
 ///////////////////////////////////////////////////////////////
+//					TODO
 //
 // 1. OPERATIONS (src/operations/)
-//    [x] Implement swap (sa, sb,
-//	ss)
-//    [x] Implement push (pa,
-//	pb) -- Logic merges lists instead of moving nodes.
-//    [x] Implement rotate (ra, rb, rr) -- Only updates indices,
-//	doesn't move head.
-//    [x] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
-//	doesn't move head.
+//    [X] Implement swap (sa, sb, ss)
+//    [X] Implement push (pa, pb)
+//    [X] Implement rotate (ra, rb, rr) -- Only updates indices,
+//    [X] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
 //
 // 2. ERROR HANDLING & MEMORY
-//    [x] Implement free_stack(t_stack **stack) to free the list
-//    [x] Implement error_exit(t_stack **stack)
-//		that prints "Error\n" and frees
-//    [] Check for DUPLICATES in process_arg (crucial!)
-//    [x] Implement strict syntax check in process_arg.
-//           Method: Pointer walk. Skip sign, while(isdigit) ptr++,
-//           if (*ptr) -> Error. Do this before ft_atoll.
+//    [X] Implement free_stack(t_stack **stack) to free the list
+//    [X] Implement error_exit(t_stack **stack)
+//    [X] Check for DUPLICATES in process_arg ()
+//    [X] Implement strict syntax check in process_arg.
 //
 // 3. SORTING ALGORITHM (src/sort/)
-//    [] Implement sort_three(t_stack **a) for small stacks
-//    [ ] Implement Turk Algorithm for large stacks:
-//        - init_nodes_a (set indices, etc.)
-//        - init_nodes_b (find targets in A)
-//        - current_index (update positions)
-//        - set_cheapest (calculate cost)
-//        - push_swap (main algo loop)
+//    [?] Implement sort_three(t_stack **a) for small stacks
+//    [?] Implement Turk Algorithm for large stacks:
+//    [ ] init_nodes_a (set indices, etc.)
+//    [ ] init_nodes_b (find targets in A)
+//    [ ] current_index (update positions)
+//    [ ] set_cheapest (calculate cost)
+//    [ ] push_swap (main algo loop)
 //
 //	4. LINKED LIST IMPLEMENTATION
-// 		TODO Modify `append_node` to create a CIRCULAR doubly linked list.
-//        ! [] fix Current implementation is linear (conflicts with operations).
+//    FIX append_node to create a CIRCULAR doubly linked list.
+//      	[!] Current implementation is linear NOT circular
 //
 ////////////////////////////////////////////////////////////////////////////////
 

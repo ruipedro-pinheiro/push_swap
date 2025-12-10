@@ -6,42 +6,41 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 18:29:17 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/10 18:55:38 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/push_swap.h"
 #include "../libft/libft.h"
 
-///////////////////////////////////////////////////////////////
-//					TODO
-//
-// 1. OPERATIONS (src/operations/)
-//    [X] Implement swap (sa, sb, ss)
-//    [X] Implement push (pa, pb)
-//    [X] Implement rotate (ra, rb, rr) -- Only updates indices,
-//    [X] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
-//
-// 2. ERROR HANDLING & MEMORY
-//    [X] Implement free_stack(t_stack **stack) to free the list
-//    [X] Implement error_exit(t_stack **stack)
-//    [X] Check for DUPLICATES in process_arg ()
-//    [X] Implement strict syntax check in process_arg.
-//
-// 3. SORTING ALGORITHM (src/sort/)
-//    [?] Implement sort_three(t_stack **a) for small stacks
-//    [?] Implement Turk Algorithm for large stacks:
-//    [ ] init_nodes_a (set indices, etc.)
-//    [ ] init_nodes_b (find targets in A)
-//    [ ] current_index (update positions)
-//    [ ] set_cheapest (calculate cost)
-//    [ ] push_swap (main algo loop)
-//
-//	4. LINKED LIST IMPLEMENTATION
-//    FIX append_node to create a CIRCULAR doubly linked list.
-//      	[!] Current implementation is linear NOT circular
-//
-////////////////////////////////////////////////////////////////////////////////
+/*
+**				TODO
+**
+** 1. OPERATIONS (src/operations/)
+**    [X] Implement swap (sa, sb, ss)
+**    [X] Implement push (pa, pb)
+**    [X] Implement rotate (ra, rb, rr) -- Only updates indices,
+**    [X] Implement reverse rotate (rra, rrb, rrr) -- Only updates indices,
+**
+** 2. ERROR HANDLING & MEMORY
+**    [X] Implement free_stack(t_stack **stack) to free the list
+**    [X] Implement error_exit(t_stack **stack)
+**    [X] Check for DUPLICATES in process_arg ()
+**    [X] Implement strict syntax check in process_arg.
+**
+** 3. SORTING ALGORITHM (src/sort/)
+**    [?] Implement sort_three(t_stack **a) for small stacks
+**    [?] Implement Turk Algorithm for large stacks:
+**    [ ] init_nodes_a (set indices, etc.)
+**    [ ] init_nodes_b (find targets in A)
+**    [ ] current_index (update positions)
+**    [ ] set_cheapest (calculate cost)
+**    [ ] push_swap (main algo loop)
+**
+**	4. LINKED LIST IMPLEMENTATION
+**    FIX append_node to create a CIRCULAR doubly linked list.
+**      	[?] Current implementation is linear NOT circular
+*/
 
 /*
 ** @brief Frees a NULL-terminated array of strings.

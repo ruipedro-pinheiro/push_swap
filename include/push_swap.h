@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 12:59:37 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/11 01:37:02 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -39,8 +39,6 @@ typedef struct stack
 	struct stack	*next;
 	struct stack	*prev;
 }					t_stack;
-void				append_node(t_stack **stack, int n);
 void				free_stack(t_stack **stack);
 int					ft_listcount(t_stack **stack);
-void				error_exit(t_stack **stack);
 #endif

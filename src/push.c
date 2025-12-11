@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 13:40:04 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 17:50:20 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/11 01:37:06 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,15 +15,11 @@
 void	pos_change(t_stack **stack);
 
 /*
-** @brief Push function that will move top element in stack to another
-** @param a the stack a
-** @param b the stack b
-** 	@note `first_node_source->next = first_node_dest`
-	// On dit que le node apres le node source
-	//est AVANT le premier node de la stack dest
-	`first_node_dest->prev = first_node_source`
-	// On dit au ancien premier node de la
-	// stack dest qu'il y a le nouveau node avant
+** @brief Pushes the top element from source stack to destination stack.
+** @param dest Pointer to the destination stack.
+** @param source Pointer to the source stack.
+** @note Moves the first node from source to the top of dest.
+** @note Updates the prev/next pointers for circular doubly linked list.
 */
 void	push(t_stack **dest, t_stack **source)
 {
@@ -33,7 +29,6 @@ void	push(t_stack **dest, t_stack **source)
 	first_node_dest = *dest;
 	first_node_source = *source;
 	first_node_source->prev = first_node_dest->prev;
-	// on link le dernier element de la stack dest au node de la stack source
 	first_node_source->next = first_node_dest;
 	first_node_dest->prev = first_node_source;
 	first_node_dest->prev->next = first_node_source;

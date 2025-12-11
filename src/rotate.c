@@ -12,8 +12,12 @@
 
 #include "../include/push_swap.h"
 
-// le premier devient dernier
-// dernier  devient avant dernier
+/*
+** @brief Rotates the stack upward (first element becomes last).
+** @param stack Pointer to the stack to rotate.
+** @note Updates the stack pointer to point to the next node.
+** @note Recalculates position indices for all nodes.
+*/
 void	rotate(t_stack **stack)
 {
 	t_stack	*node;

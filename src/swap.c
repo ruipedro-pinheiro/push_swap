@@ -12,6 +12,12 @@
 
 #include "../include/push_swap.h"
 
+/*
+** @brief Swaps the first two elements in a circular stack.
+** @param stack Pointer to the stack to swap.
+** @note Does nothing if stack has less than 2 elements.
+** @note Updates prev/next pointers to maintain circular structure.
+*/
 void	swap(t_stack **stack)
 {
 	t_stack	*first_node;

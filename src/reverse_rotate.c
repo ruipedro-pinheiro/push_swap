@@ -13,9 +13,11 @@
 
 #include "../include/push_swap.h"
 
-/* @brief le dernier devient premier
-**@note `first_node = *stack;` // on connait donc le node qui commence la stack
-**@note `first_node->prev;`    // on commence avec le dernier
+/*
+** @brief Reverse rotates the stack (last element becomes first).
+** @param stack Pointer to the stack to reverse rotate.
+** @note In a circular list, moves the stack pointer to the previous node.
+** @note Recalculates position indices for all nodes.
 */
 void	reverse_rotate(t_stack **stack)
 {

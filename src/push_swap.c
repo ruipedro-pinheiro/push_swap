@@ -6,17 +6,12 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:59:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/11 01:37:30 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:12:11 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "../include/push_swap.h"
 #include "../libft/libft.h"
-
-/*
-** Main entry point for push_swap program.
-** See TODO.md for project roadmap and pending tasks.
-*/
 
 /*
 ** @brief Frees a NULL-terminated array of strings.
@@ -77,7 +72,7 @@ static void	process_arg(t_stack **a, char *arg_str)
 			free_matrix(input);
 			free_stack(a);
 		}
-		append_node(a, (int)val);
+		// append_node(a, (int)val); FIXME
 	}
 	free_matrix(input);
 }

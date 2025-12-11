@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/11 01:37:02 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/12/11 13:58:15 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -41,4 +41,8 @@ typedef struct stack
 }					t_stack;
 void				free_stack(t_stack **stack);
 int					ft_listcount(t_stack **stack);
+void				swap(t_stack **stack);
+void				push(t_stack **dest, t_stack **source);
+void				reverse_rotate(t_stack **stack);
+void				rotate(t_stack **stack);
 #endif

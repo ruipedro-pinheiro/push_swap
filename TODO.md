@@ -1,23 +1,15 @@
 # Push_swap - T0DO List
 
-# 🚧 In Progress
-
-## Circular Doubly Linked List Implementation
-  - [!] Implement append_node() to create and add nodes to circular list
-  - [ ] Single node: node->prev = node, node->next = node
-  - [ ] Multiple nodes: last->next = first, first->prev = last
-  - [ ] Add function prototype to push_swap.h
-
-## Position Management
-  - [ ] Fix pos_change() inP push.c
-  - [ ] Update position indices after each operation
-
-  ---
-
 # 📋 T0DO - Not Started
 
+
+## Double circular lists
+  - [!] Implement append_node() to create and add nodes to circular list
+    - [ ] Single node: node->prev = node, node->next = node
+    - [ ] Multiple nodes: last->next = first, first->prev = last
+    - [ ] Add function prototype to push_swap.h
+
 ## Sorting Algorithms
-  - [ ] Implement sort_three() for 3-element stacks
   - [ ] Implement Turk Algorithm for large stacks:
     - [ ] init_nodes_a() - Initialize nodes in stack A (set indices, etc.)
     - [ ] init_nodes_b() - Find optimal targets in stack A for nodes in B
@@ -32,6 +24,17 @@
   - [ ] Memory leak testing with valgrind
 
   ---
+
+# 🚧 In Progress
+
+## Algorithms
+  - [ ] Implement sort_three() for 3-element stacks
+## Position Management
+  - [ ] Fix pos_change() inP push.c
+  - [ ] Update position indices after each operation
+
+  ---
+
 
 # 🐛 Known Bugs
 

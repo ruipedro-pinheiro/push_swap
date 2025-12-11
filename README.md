@@ -86,8 +86,9 @@ Or as a single string:
 ### Testing
 Recommended tester/visualiser:
 
-[More complete](https://github.com/obenchkroune/push_swap_visualizer)
-[Most used](https://github.com/o-reo/push_swap_visualizer)=
+[My favorite](https://github.com/obenchkroune/push_swap_visualizer)
+And the
+[Most used](https://github.com/o-reo/push_swap_visualizer)
 ---
 
 ## Available Operations

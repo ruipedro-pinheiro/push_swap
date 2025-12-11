@@ -84,16 +84,11 @@ Or as a single string:
 ```
 
 ### Testing
-Recommended tester:
-```bash
-# Clone tester
-git clone https://github.com/LeoFu9487/push_swap_tester.git
+Recommended tester/visualiser:
 
-# Run tests
-cd push_swap_tester
-bash push_swap_tester.sh /path/to/push_swap
-```
-
+[My favorite](https://github.com/obenchkroune/push_swap_visualizer)
+And the
+[Most used](https://github.com/o-reo/push_swap_visualizer)
 ---
 
 ## Available Operations

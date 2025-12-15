@@ -71,7 +71,7 @@ src/
 ```
 
 ### PHASE 1: Fonctions Utilitaires
-- [ ] current_index(t_stack *stack) - assigne position à chaque node
+- [X] current_index(t_stack *stack) - assigne position à chaque node
 - [ ] set_median(t_stack *stack) - set above_median bool
 - [ ] find_min(t_stack *stack) - retourne node min
 - [ ] find_max(t_stack *stack) - retourne node max

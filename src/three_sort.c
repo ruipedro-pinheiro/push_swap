@@ -11,7 +11,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 /*
 ** @brief function to sort 3 nodes in a stack ascending (smaller to bigger)
@@ -26,7 +26,7 @@ void	three_sort(t_stack **stack)
 
 	first_node = *stack;
 	if (first_node->value > first_node->next->value
-		&& first_node->prev > first_node->value)
+		&& first_node->prev->value > first_node->value)
 		reverse_rotate(stack);
 	else if (first_node->next->value > first_node->prev->value)
 		rotate(stack);

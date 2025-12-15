@@ -26,6 +26,8 @@ void	push(t_stack **dest, t_stack **source)
 	t_stack	*first_node_dest;
 	t_stack	*first_node_source;
 
+	if (!dest || !*dest || !source || !*source)
+		return ;
 	first_node_dest = *dest;
 	first_node_source = *source;
 	first_node_source->prev = first_node_dest->prev;

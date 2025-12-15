@@ -21,18 +21,18 @@
 
 ### BUG 5: rotate() wrong pointer
 - **Fichier:** rotate.c:38
--  **Problème:** `*stack = first_node->prev` est faux (rotate = first devient last)
-- [ ] **Fix:** `*stack = first_node->next` (le 2ème node devient le premier)
+-**Problème:** `*stack = first_node->prev` est faux (rotate = first devient last)
+- [X] **Fix:** `*stack = first_node->next` (le 2ème node devient le premier)
 
 ### BUG 6: three_sort() compare pointer to value
 - **Fichier:** three_sort.c:29
 -**Problème:** `first_node->prev > first_node->value` compare pointeur et int
-- [ ] **Fix:** `first_node->prev->value > first_node->value`
+- [X] **Fix:** `first_node->prev->value > first_node->value`
 
 ### BUG 7: push() crashes si dest NULL
 -**Fichier:** push.c:31
 -**Problème:** Pas de NULL check avant de déréférencer dest
-- [ ] **Fix:** Ajouter check au début: `if (!dest || !*dest || !source || !*source) return;`
+- [X] **Fix:** Ajouter check au début: `if (!dest || !*dest || !source || !*source) return;`
 
 ---
 
@@ -52,10 +52,10 @@
 ## 📋 TODO - Après append_node
 
 ### Makefile
-- [ ] Retirer `add_stack_node.c` de la ligne 8 (fichier existe pas)
+- [X] Retirer `add_stack_node.c` de la ligne 8 (fichier existe pas)
 
 ### Sorting Algorithms
-- [ ] Finir three_sort() (après fix du bug)
+- [X] Debug three_sort() (après fix du bug)
 - [ ] Implémenter Turk Algorithm:
   - [ ] init_nodes_a()
   - [ ] init_nodes_b()

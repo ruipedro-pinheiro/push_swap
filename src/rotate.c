@@ -35,7 +35,7 @@ void	rotate(t_stack **stack)
 		node->position = i;
 		i++;
 	}
-	*stack = first_node->prev;
+	*stack = first_node->next;
 }
 
 void	ra(t_stack **a)

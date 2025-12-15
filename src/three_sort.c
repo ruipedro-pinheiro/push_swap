@@ -21,13 +21,15 @@
 */
 void	three_sort(t_stack **stack)
 {
-	t_stack		*first_node;
-	long long	val;
+	t_stack	*first_node;
 
 	first_node = *stack;
 	if (first_node->value > first_node->next->value
-		&& first_node->prev->value > first_node->value)
-		reverse_rotate(stack);
-	else if (first_node->next->value > first_node->prev->value)
+		&& first_node->prev->value < first_node->value)
 		rotate(stack);
+	else if (first_node->next->value > first_node->prev->value)
+		reverse_rotate(stack);
+	first_node = *stack;
+	if (first_node->value > first_node->next->value)
+		swap(stack);
 }

@@ -194,11 +194,17 @@ See `TODO.md` for current progress, bugs, and pending tasks.
 
 ## Resources
 
-- [Oceano's Push_swap Tutorial (YouTube)](https://www.youtube.com/watch?v=wRvipSG4Mmk)
-- [Push_swap Medium Article](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
-- [Oceano's Community Notion](https://suspectedoceano.notion.site/push_swap-be0032a86f8c46fd98e71c2ad04721c1)
-- [Thuggonaut's Visual Tutorial](https://www.youtube.com/watch?v=OaG81sDEpVk)
-- [Faster Solution by Vikingu-del](https://github.com/Vikingu-del/Push_swap)
+- [Oceano's video and comments (YouTube)](https://www.youtube.com/watch?v=wRvipSG4Mmk) 
+  Very good video, but with some flaws, the comments below the video though are SUPER helpful, some are alerting Oceano's live code, others giving exceptionally good tips. 
+
+- [Gitbook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap/building-the-thing) It is very good for a start but it lacks something that i couldn't "click"
+
+- [Medium Article by Ali Ogun](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) 
+	-A gold mine, actually very good, i was following this all along my project.
+
+- [Github Readme Instructions](https://github.com/alx-sch/push_swap?tab=readme-ov-file)
+	-He actually based himself from the same medium article from Ali Ogun, yet his readme instructions are also VERY good.
+
 
 ### AI Usage
 

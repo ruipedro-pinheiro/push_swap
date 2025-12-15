@@ -11,7 +11,6 @@
 /******************************************************************************/
 
 #include "../include/push_swap.h"
-#include "push_swap.h"
 
 /*
 ** @brief Counts the number of nodes in a circular doubly linked list.
@@ -31,7 +30,7 @@ int	ft_listcount(t_stack **stack)
 	count = 0;
 	if (!node)
 		return (0);
-	while (node != first_node->prev)
+	while (node->next != first_node)
 	{
 		node = node->next;
 		count++;

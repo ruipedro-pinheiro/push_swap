@@ -3,14 +3,13 @@
 ## 🔴 BUGS À FIX EN PREMIER (avant append_node)
 
 ### BUG 1: process_arg() missing exit
-- [ ] **Fichier:** push_swap.c:80
-- [ ] **Problème:** J'affiche "Error" mais la fonction continue
-- [ ] **Fix:** Ajouter `exit(1);` après `free_stack(a);`
+- **Problème:** J'affiche "Error" mais la fonction continue
+- [X] **Fix:** Ajouter `exit(1);` après `free_stack(a);`
 
 ### BUG 2: ft_listcount() off-by-one
-- [ ] **Fichier:** ft_list_operations.c:34
-- [ ] **Problème:** Loop condition `node != first_node->prev` rate le dernier node
-- [ ] **Fix:** Changer en `node->next != first_node` ou compter avant le check
+- **Fichier:** ft_list_operations.c:34
+- **Problème:** Loop condition `node != first_node->prev` rate le dernier node
+- [X] **Fix:** Changer en `node->next != first_node` ou compter avant le check
 
 ### ✅ BUG 3: free_stack() infinite loop - FIXED
 - [x] **Fichier:** ft_list_operations.c:54
@@ -21,18 +20,18 @@
 - [x] **Fix:** Ajouté `node = node->next` + check `if (!stack || !*stack)`
 
 ### BUG 5: rotate() wrong pointer
-- [ ] **Fichier:** rotate.c:38
-- [ ] **Problème:** `*stack = first_node->prev` est faux (rotate = first devient last)
+- **Fichier:** rotate.c:38
+-  **Problème:** `*stack = first_node->prev` est faux (rotate = first devient last)
 - [ ] **Fix:** `*stack = first_node->next` (le 2ème node devient le premier)
 
 ### BUG 6: three_sort() compare pointer to value
-- [ ] **Fichier:** three_sort.c:29
-- [ ] **Problème:** `first_node->prev > first_node->value` compare pointeur et int
+- **Fichier:** three_sort.c:29
+-**Problème:** `first_node->prev > first_node->value` compare pointeur et int
 - [ ] **Fix:** `first_node->prev->value > first_node->value`
 
 ### BUG 7: push() crashes si dest NULL
-- [ ] **Fichier:** push.c:31
-- [ ] **Problème:** Pas de NULL check avant de déréférencer dest
+-**Fichier:** push.c:31
+-**Problème:** Pas de NULL check avant de déréférencer dest
 - [ ] **Fix:** Ajouter check au début: `if (!dest || !*dest || !source || !*source) return;`
 
 ---

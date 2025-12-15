@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 #include "../libft/libft.h"
+#include <stdlib.h>
 
 /*
 ** @brief Frees a NULL-terminated array of strings.
@@ -78,6 +79,7 @@ static void	process_arg(t_stack **a, char *arg_str)
 			ft_putendl_fd("Error", 2);
 			free_matrix(input);
 			free_stack(a);
+			exit(1);
 		}
 		// append_node(a, (int)val); FIXME
 	}

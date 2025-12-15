@@ -39,13 +39,13 @@
 ## 🟡 APRÈS LES BUGS: Implémenter append_node()
 
 ### Fonction append_node() - BLOQUANT
-- [ ] **Fichier:** Créer nouveau fichier ou ajouter dans ft_list_operations.c
-- [ ] **Prototype:** `void append_node(t_stack **stack, int value);`
+- [X] **Fichier:** Créer nouveau fichier ou ajouter dans ft_list_operations.c
+- [X] **Prototype:** `void append_node(t_stack **stack, int value);`
 - [ ] **Logique:**
-  - [ ] Créer nouveau node avec malloc
-  - [ ] Si stack vide: `node->prev = node; node->next = node;`
-  - [ ] Si stack non-vide: insérer à la fin et maintenir circular
-- [ ] **Décommenter:** push_swap.c:82 après implémentation
+  - [X] Créer nouveau node avec malloc
+  - [X] Si stack vide: `node->prev = node; node->next = node;`
+  - [X] Si stack non-vide: insérer à la fin et maintenir circular
+- [X] **Décommenter:** push_swap.c:82 après implémentation
 
 ---
 
@@ -55,7 +55,7 @@
 - [X] Retirer `add_stack_node.c` de la ligne 8 (fichier existe pas)
 
 ### Sorting Algorithms
-- [X] Debug three_sort() (après fix du bug)
+- [X] Debug three_sort()
 - [ ] Implémenter Turk Algorithm:
   - [ ] init_nodes_a()
   - [ ] init_nodes_b()

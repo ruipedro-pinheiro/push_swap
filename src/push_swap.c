@@ -81,7 +81,7 @@ static void	process_arg(t_stack **a, char *arg_str)
 			free_stack(a);
 			exit(1);
 		}
-		// append_node(a, (int)val); FIXME
+		append_node(a, (int)val);
 	}
 	free_matrix(input);
 }

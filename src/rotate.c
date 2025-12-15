@@ -22,19 +22,20 @@ void	rotate(t_stack **stack)
 {
 	t_stack	*node;
 	t_stack	*first_node;
-	t_stack	*tmp;
 	int		i;
 
+	if (!stack || !*stack)
+		return ;
 	i = 0;
 	first_node = *stack;
 	node = first_node->next;
 	while (node != first_node)
 	{
-		tmp = node;
-		node = node->next;
 		node->position = i;
+		node = node->next;
 		i++;
 	}
+	node->position = i;
 	*stack = first_node->next;
 }
 

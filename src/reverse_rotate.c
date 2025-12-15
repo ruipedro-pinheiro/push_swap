@@ -23,15 +23,15 @@ void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*node;
 	t_stack	*first_node;
-	t_stack	*tmp;
 	int		i;
 
+	if (!stack || !*stack)
+		return ;
 	i = 0;
 	first_node = *stack;
 	node = first_node->prev;
 	while (node->prev != first_node->prev)
 	{
-		tmp = node;
 		node->position = i;
 		node = node->prev;
 		i++;
@@ -53,7 +53,7 @@ void	rrb(t_stack **b)
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
+	reverse_rotate(a);
+	reverse_rotate(b);
 	write(1, "rrr\n", 4);
 }

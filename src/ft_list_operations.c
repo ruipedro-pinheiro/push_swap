@@ -28,7 +28,7 @@ int	ft_listcount(t_stack **stack)
 
 	node = *stack;
 	first_node = *stack;
-	count = 0;
+	count = 1;
 	if (!node)
 		return (0);
 	while (node->next != first_node)
@@ -69,18 +69,24 @@ void	append_node(t_stack **stack, int value)
 	t_stack	*node;
 	t_stack	*first_node;
 
+	first_node = *stack;
 	node = malloc(sizeof(t_stack));
 	if (!node)
 		return ;
-	first_node = *stack;
 	if (!*stack)
 	{
 		node->prev = node;
 		node->next = node;
 		node->position = 0;
+		*stack = node;
+	}
+	else
+	{
+		node->next = first_node;
+		node->prev = first_node->prev;
+		first_node->prev->next = node;
+		first_node->prev = node;
 	}
 	node->value = value;
-	node->prev = first_node->prev;
-	node->next = first_node;
 	node->position = ft_listcount(stack) + 1;
 }

@@ -11,6 +11,7 @@
 /******************************************************************************/
 
 #include "../include/push_swap.h"
+#include <unistd.h>
 
 /*
 ** @brief Swaps the first two elements in a circular stack.
@@ -25,7 +26,7 @@ void	swap(t_stack **stack)
 	t_stack	*tmp;
 
 	tmp = *stack;
-	if (!tmp || !tmp->next)
+	if (!tmp || tmp->next == tmp)
 		return ;
 	first_node = tmp;
 	second_node = first_node->next;

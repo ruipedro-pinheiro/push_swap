@@ -1,93 +1,86 @@
-# Push_swap - T0DO List
+# Push_swap - TODO
 
-# 📋 T0DO - Not Started
+## 🔴 BUGS À FIX EN PREMIER (avant append_node)
 
+### BUG 1: process_arg() missing exit
+- [ ] **Fichier:** push_swap.c:80
+- [ ] **Problème:** J'affiche "Error" mais la fonction continue
+- [ ] **Fix:** Ajouter `exit(1);` après `free_stack(a);`
 
-## Double circular lists
-  - [!] Implement append_node() to create and add nodes to circular list
-    - [ ] Single node: node->prev = node, node->next = node
-    - [ ] Multiple nodes: last->next = first, first->prev = last
-    - [ ] Add function prototype to push_swap.h
+### BUG 2: ft_listcount() off-by-one
+- [ ] **Fichier:** ft_list_operations.c:34
+- [ ] **Problème:** Loop condition `node != first_node->prev` rate le dernier node
+- [ ] **Fix:** Changer en `node->next != first_node` ou compter avant le check
 
-## Sorting Algorithms
-  - [ ] Implement Turk Algorithm for large stacks:
-    - [ ] init_nodes_a() - Initialize nodes in stack A (set indices, etc.)
-    - [ ] init_nodes_b() - Find optimal targets in stack A for nodes in B
-    - [ ] current_index() - Update position indices
-    - [ ] set_cheapest() - Calculate push cost and mark cheapest node
-    - [ ] Main sorting loop using Turk Algorithm
+### ✅ BUG 3: free_stack() infinite loop - FIXED
+- [x] **Fichier:** ft_list_operations.c:54
+- [x] **Fix:** Casse le cercle avec `(*stack)->prev->next = NULL` avant de free
 
-## Testing & Validation
-  - [ ] Test with edge cases (empty stack, single element, duplicates)
-  - [ ] Benchmark performance (100 numbers < 700 ops, 500 numbers < 5500 ops)
-  - [ ] Test with checker program
-  - [ ] Memory leak testing with valgrind
+### ✅ BUG 4: pos_change() infinite loop - FIXED
+- [x] **Fichier:** push.c:60
+- [x] **Fix:** Ajouté `node = node->next` + check `if (!stack || !*stack)`
 
-  ---
+### BUG 5: rotate() wrong pointer
+- [ ] **Fichier:** rotate.c:38
+- [ ] **Problème:** `*stack = first_node->prev` est faux (rotate = first devient last)
+- [ ] **Fix:** `*stack = first_node->next` (le 2ème node devient le premier)
 
-# 🚧 In Progress
+### BUG 6: three_sort() compare pointer to value
+- [ ] **Fichier:** three_sort.c:29
+- [ ] **Problème:** `first_node->prev > first_node->value` compare pointeur et int
+- [ ] **Fix:** `first_node->prev->value > first_node->value`
 
-## Algorithms
-  - [ ] Implement sort_three() for 3-element stacks
-## Position Management
-  - [ ] Fix pos_change() inP push.c
-  - [ ] Update position indices after each operation
+### BUG 7: push() crashes si dest NULL
+- [ ] **Fichier:** push.c:31
+- [ ] **Problème:** Pas de NULL check avant de déréférencer dest
+- [ ] **Fix:** Ajouter check au début: `if (!dest || !*dest || !source || !*source) return;`
 
-  ---
+---
 
+## 🟡 APRÈS LES BUGS: Implémenter append_node()
 
-# 🐛 Known Bugs
+### Fonction append_node() - BLOQUANT
+- [ ] **Fichier:** Créer nouveau fichier ou ajouter dans ft_list_operations.c
+- [ ] **Prototype:** `void append_node(t_stack **stack, int value);`
+- [ ] **Logique:**
+  - [ ] Créer nouveau node avec malloc
+  - [ ] Si stack vide: `node->prev = node; node->next = node;`
+  - [ ] Si stack non-vide: insérer à la fin et maintenir circular
+- [ ] **Décommenter:** push_swap.c:82 après implémentation
 
-## BUG: pos_change() infinite loop (push.c:64)
-  - [!] Loop condition `node->prev != *stack` never becomes true
-  - [ ] Why: In circular list, going backwards from *stack loops forever,
-  	never hits *stack again
-  - [ ] Fix: Use counter or track first_node differently
+---
 
-## BUG: ft_listcount() off-by-one (ft_list_operations.c:34)
-  - [ ] Stops at `node != first_node->prev` so misses last node
-  - [ ] Why: Loop exits when reaching last node but doesn't count it
-  - [ ] Fix: Change condition to `node->next != first_node`
-          or count before loop check
+## 📋 TODO - Après append_node
 
+### Makefile
+- [ ] Retirer `add_stack_node.c` de la ligne 8 (fichier existe pas)
 
-## BUG: free_stack() doesn't handle circular lists correctly (ft_list_operations.c:48)
-  - [ ] Uses `while (current)` but in circular list,
-        current never becomes NULL
-  - [ ] Why: In circular list, last->next points back to first, infinite loop
-	- [ ] Fix: Break circle before freeing or use different termination condition
+### Sorting Algorithms
+- [ ] Finir three_sort() (après fix du bug)
+- [ ] Implémenter Turk Algorithm:
+  - [ ] init_nodes_a()
+  - [ ] init_nodes_b()
+  - [ ] current_index()
+  - [ ] set_cheapest()
+  - [ ] Main sorting loop
 
-## BUG: is_duplicate() infinite loop with circular lists (push_swap.c:41)
-  - [ ] Uses `while (a)` but in circular list, a never becomes NULL
-  - [ ] Why: In circular list, a->next always points to something, never NULL
-  - [ ] Fix: Track first node and stop when node->next == first_node
+### Testing
+- [ ] Test edge cases (empty, single, duplicates)
+- [ ] Benchmark (100 nums < 700 ops, 500 nums < 5500 ops)
+- [ ] Test avec checker
+- [ ] Valgrind memory leaks
 
-## BUG: push() crashes if dest is NULL (push.c:31)
-  - [ ] No NULL check before dereferencing dest
-  - [ ] Why: Assumes both stacks always have elements
-  - [ ] Fix: Add NULL check at start of function
+---
 
-##BUG: process_arg() missing exit (push_swap.c:76-79)
-  - [ ] Prints "Error\n" but function continues executing
-  - [ ] Why: No exit(1) call after freeing
-  - [ ] Fix: Add exit(1) after free_stack()
+## ✅ DONE
 
-  ---
-
-# ✅ Completed
-
-## Stack Operations
-  - [X] Implement swap operations (sa, sb, ss)
-  - [X] Implement push operations (pa, pb)
-  - [X] Implement rotate operations (ra, rb, rr)
-  - [X] Implement reverse rotate operations (rra, rrb, rrr)
-
-## Error Handling & Memory Management
-  - [X] Check for duplicate integers in input
-  - [X] Validate input syntax (non-numeric, overflows/underflows)
-
-## Argument Parsing
-  - [X] Parse command-line arguments (single or multiple strings)
-  - [X] Handle space-separated integers
-  - [X] Validate integer range (INT_MIN to INT_MAX)
-
+- [x] Swap operations (sa, sb, ss)
+- [x] Push operations (pa, pb)
+- [x] Rotate operations (ra, rb, rr)
+- [x] Reverse rotate operations (rra, rrb, rrr)
+- [x] Duplicate checking
+- [x] Input validation
+- [x] Argument parsing
+- [x] **BUG FIX:** pos_change() - infinite loop (2025-12-14)
+- [x] **BUG FIX:** free_stack() - infinite loop (2025-12-14)
+- [x] **BUG FIX:** is_duplicate() - circular list check

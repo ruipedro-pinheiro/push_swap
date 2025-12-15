@@ -31,13 +31,20 @@ void	free_matrix(char **argv)
 
 static int	is_duplicate(t_stack *a, int n)
 {
+	t_stack	*current;
+
 	if (!a)
 		return (0);
-	while (a)
+	current = a;
+	while (1)
 	{
-		if (a->value == n)
+		if (current->value == n)
 			return (1);
-		a = a->next;
+		current = current->next;
+		if (current == a)
+		{
+			break ;
+		}
 	}
 	return (0);
 }

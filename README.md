@@ -1,3 +1,5 @@
+*This project has been created as part of the 42 curriculum by rpinheir*
+
 # Push_swap - Sorting Algorithms & Complexity
 
 **Score:** TBD/100
@@ -177,7 +179,7 @@ Your parser must handle both single arguments and multi-arg with quoted strings.
 
 ## Development Status
 
-See `TODO.c` for current progress, bugs, and pending tasks.
+See `TODO.md` for current progress, bugs, and pending tasks.
 
 ---
 
@@ -197,6 +199,16 @@ See `TODO.c` for current progress, bugs, and pending tasks.
 - [Oceano's Community Notion](https://suspectedoceano.notion.site/push_swap-be0032a86f8c46fd98e71c2ad04721c1)
 - [Thuggonaut's Visual Tutorial](https://www.youtube.com/watch?v=OaG81sDEpVk)
 - [Faster Solution by Vikingu-del](https://github.com/Vikingu-del/Push_swap)
+
+### AI Usage
+
+AI (Claude) was used as a learning coach during this project:
+- Reviewing code and pointing out potential issues for me to investigate
+- Asking questions to help me think through problems
+- Explaining concepts when I got stuck
+
+All code implementation, bug identification, and problem-solving were done independently.
+The AI did not write code for this project.
 
 ---
 

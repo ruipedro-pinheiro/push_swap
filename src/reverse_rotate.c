@@ -3,8 +3,8 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+      
-	+#+        */
+/*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+
+		+#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:22:40 by rpinheir          #+#    #+#             */
 /*   Updated: 2025/12/10 14:22:47 by rpinheir         ###   ########.ch       */

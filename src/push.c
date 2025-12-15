@@ -55,11 +55,16 @@ void	pos_change(t_stack **stack)
 	t_stack	*node;
 	int		i;
 
+	if (!*stack || !stack)
+		return ;
 	i = 0;
 	node = *stack;
-	while (node->prev != *stack)
+	while (1)
 	{
 		node->position = i;
+		node = node->next;
 		i++;
+		if (node == *stack)
+			break ;
 	}
 }

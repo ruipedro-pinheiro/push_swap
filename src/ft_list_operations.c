@@ -47,14 +47,19 @@ int	ft_listcount(t_stack **stack)
 */
 void	free_stack(t_stack **stack)
 {
-	t_stack *next_node;
-	t_stack *current;
+	t_stack	*next_node;
+	t_stack	*current;
 
+	if (!*stack)
+		return ;
 	current = *stack;
+	current->prev->next = NULL;
+	current->prev = NULL;
 	while (current)
 	{
 		next_node = current->next;
 		free(current);
 		current = next_node;
 	}
+	*stack = NULL;
 }

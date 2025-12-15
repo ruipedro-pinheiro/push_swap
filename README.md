@@ -54,17 +54,24 @@ I used a **Doubly Linked List** for the stacks.
 ```c
 typedef struct stack
 {
-    int value;
-    int push_price;    // Cost to move this node
-    int position;      // Current index in the stack
-    bool cheapest;     // Is this the cheapest node to move?
-    bool above_median; // Optimization for rotation direction
-    struct stack *next;
-    struct stack *prev;
+    int             value;
+    int             push_price;    // Cost to move this node
+    int             position;      // Current index in the stack
+    bool            cheapest;      // Is this the cheapest node to move?
+    bool            above_median;  // Optimization for rotation direction
+    struct stack    *target_node;  // Target position in other stack
+    struct stack    *next;
+    struct stack    *prev;
 } t_stack;
 ```
 
-Using a doubly linked list allows for **O(1)** complexity when accessing the last element (for `rra`/`rrb` operations), which is crucial for performance.
+Using a **circular doubly linked list** allows for **O(1)** complexity when accessing the last element (for `rra`/`rrb` operations).
+
+**CRITICAL**: This is a CIRCULAR list, not NULL-terminated!
+- `last->next = first`
+- `first->prev = last`
+- NEVER check for `next == NULL` or `prev == NULL`
+- Use `current == first_node` to detect full loop
 
 ---
 
@@ -189,6 +196,37 @@ See `TODO.md` for current progress, bugs, and pending tasks.
 - `include/`: Header files with function prototypes and data structures
 - `libft/`: Custom C library (42 project dependency)
 - `obj/`: Object files generated during compilation
+
+---
+
+## Key Learnings
+
+### Double Pointeur (`t_stack **stack`)
+- `stack` = le pointeur vers pointeur lui-même
+- `*stack` = le pointeur vers le premier node (ou NULL si vide)
+- `**stack` = le premier node lui-même
+- Check toujours `if (!stack || !*stack)` avant de déréférencer
+
+### Circular List Patterns
+```c
+// Parcourir tous les nodes
+node = *stack;
+while (1)
+{
+    // process node
+    node = node->next;
+    if (node == *stack)
+        break;
+}
+
+// Free une liste circulaire
+(*stack)->prev->next = NULL;  // Casse le cercle d'abord
+while (current) { ... }       // Puis free normalement
+
+// Node seul pointe sur lui-même
+node->next = node;
+node->prev = node;
+```
 
 ---
 

@@ -1,3 +1,15 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- TODO.md                                            :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2025/12/16 13:30:15 by rpinheir          #+#    #+#            -->
+<!-- Updated: 2025/12/16 14:41:49 by rpinheir         ###   ########.ch      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
 # Push_swap - TODO
 
 ## 🔴 BUGS À FIX EN PREMIER (avant append_node)
@@ -71,14 +83,14 @@ src/
 ```
 
 ### PHASE 1: Fonctions Utilitaires
-- [ ] current_index(t_stack *stack) - assigne position à chaque node
-- [ ] set_median(t_stack *stack) - set above_median bool
+- [X] current_index(t_stack *stack) - assigne position à chaque node
+- [X] set_median(t_stack *stack) - set above_median bool
 - [X] find_min(t_stack *stack) - retourne node min
-- [ ] find_max(t_stack *stack) - retourne node max
+- [X] find_max(t_stack *stack) - retourne node max
 - [X] is_sorted(t_stack *stack) - check si trié
 
 ### PHASE 2: Push A → B
-- [ ] get_target_b(node_a, b) - trouve où placer node_a dans B
+- [X] get_target_b(t_stack *node, t_stack **stack) - trouve où placer node_a dans B
 - [ ] calc_push_price(node, target) - calcule coût avec rr/rrr
 - [ ] init_nodes_a(a, b) - setup target_node + push_price pour chaque node de A
 - [ ] set_cheapest(stack) - marque le node le moins cher

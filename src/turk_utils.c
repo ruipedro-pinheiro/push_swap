@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 20:27:18 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/15 20:47:15 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/16 14:17:49 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	find_min(t_stack *stack)
+t_stack	*find_min(t_stack *stack)
 {
 	t_stack	*first_node;
 	t_stack	*smaller;
@@ -48,9 +48,10 @@ void	find_min(t_stack *stack)
 			smaller = node;
 		node = node->next;
 	}
+	return (smaller);
 }
 
-void	find_max(t_stack *stack)
+t_stack	*find_max(t_stack *stack)
 {
 	t_stack	*first_node;
 	t_stack	*node;
@@ -66,5 +67,21 @@ void	find_max(t_stack *stack)
 		if (node->value > biggest->value)
 			biggest = node;
 		node = node->next;
+	}
+	return (biggest);
+}
+
+void	set_median(t_stack *stack)
+{
+	t_stack	*node;
+	int		median;
+
+	node = stack;
+	median = ft_listcount(&stack) / 2;
+	while (1)
+	{
+		if (node == stack)
+			break ;
+		node->above_median = (node->position < median);
 	}
 }

@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_list_operations.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 14:26:12 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 23:59:07 by rpinheir         ###   ########.fr       */
+/*   Created: 2025/12/16 12:18:08 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/12/16 12:19:10 by rpinheir         ###   ########.ch       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdlib.h>
@@ -18,7 +18,6 @@
 ** @param stack Pointer to the stack (circular linked list).
 ** @return Number of nodes in the stack, or 0 if stack is NULL/empty.
 ** @note Traverses the list using next pointers until reaching the start.
-** @warning Current implementation has an off-by-one bug (doesn't count last node).
 */
 int	ft_listcount(t_stack **stack)
 {

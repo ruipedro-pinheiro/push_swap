@@ -71,11 +71,11 @@ src/
 ```
 
 ### PHASE 1: Fonctions Utilitaires
-- [X] current_index(t_stack *stack) - assigne position à chaque node
+- [ ] current_index(t_stack *stack) - assigne position à chaque node
 - [ ] set_median(t_stack *stack) - set above_median bool
-- [ ] find_min(t_stack *stack) - retourne node min
+- [X] find_min(t_stack *stack) - retourne node min
 - [ ] find_max(t_stack *stack) - retourne node max
-- [ ] is_sorted(t_stack *stack) - check si trié
+- [X] is_sorted(t_stack *stack) - check si trié
 
 ### PHASE 2: Push A → B
 - [ ] get_target_b(node_a, b) - trouve où placer node_a dans B

@@ -1,14 +1,14 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 14:33:05 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/11 13:58:15 by rpinheir         ###   ########.fr       */
+/*   Created: 2025/12/16 12:25:00 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/12/16 12:27:26 by rpinheir         ###   ########.ch       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
@@ -17,17 +17,6 @@
 #include <limits.h>
 #include <stdbool.h>
 
-/*
-** @brief Stack node structure.
-** @param value Integer value.
-** @param push_price Cost to push this node to the target stack.
-** @param position Current index (0-based).
-** @param cheapest True if this is the cheapest node to move.
-** @param above_median True if node is above the stack median.
-** @param target_node Pointer to the optimal target in the other stack.
-** @param next Pointer to the next node.
-** @param prev Pointer to the previous node.
-*/
 typedef struct stack {
   int value;
   int push_price;

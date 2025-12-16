@@ -12,14 +12,14 @@
 
 #include "../include/push_swap.h"
 
-int	is_sorted(t_stack **stack)
+int	is_sorted(t_stack *stack)
 {
 	t_stack	*node;
 	t_stack	*first_node;
 
-	if (!stack || !*stack)
+	if (!stack)
 		return (0);
-	first_node = *stack;
+	first_node = stack;
 	node = first_node;
 	while (node->next != first_node)
 	{
@@ -31,21 +31,40 @@ int	is_sorted(t_stack **stack)
 	return (1);
 }
 
-void	find_min(t_stack **stack)
+void	find_min(t_stack *stack)
 {
 	t_stack	*first_node;
 	t_stack	*smaller;
 	t_stack	*node;
 
-	first_node = *stack;
+	first_node = stack;
 	node = first_node;
 	smaller = first_node;
 	while (1)
 	{
-		if (node == *stack)
+		if (node == stack)
 			break ;
 		if (node->value < smaller->value)
 			smaller = node;
+		node = node->next;
+	}
+}
+
+void	find_max(t_stack *stack)
+{
+	t_stack	*first_node;
+	t_stack	*node;
+	t_stack	*biggest;
+
+	first_node = stack;
+	node = first_node;
+	biggest = node;
+	while (1)
+	{
+		if (node == stack)
+			break ;
+		if (node->value > biggest->value)
+			biggest = node;
 		node = node->next;
 	}
 }

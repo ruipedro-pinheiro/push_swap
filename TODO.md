@@ -6,7 +6,7 @@
 <!-- By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+       -->
 <!--                                              +#+#+#+#+#+   +#+          -->
 <!-- Created: 2025/12/16 13:30:15 by rpinheir          #+#    #+#            -->
-<!-- Updated: 2025/12/16 14:41:49 by rpinheir         ###   ########.ch      -->
+<!-- Updated: 2025/12/16 15:27:56 by rpinheir         ###   ########.ch      -->
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 
@@ -91,11 +91,17 @@ src/
 
 ### PHASE 2: Push A → B
 - [X] get_target_b(t_stack *node, t_stack **stack) - trouve où placer node_a dans B
+
 - [ ] calc_push_price(node, target) - calcule coût avec rr/rrr
+
 - [ ] init_nodes_a(a, b) - setup target_node + push_price pour chaque node de A
+
 - [ ] set_cheapest(stack) - marque le node le moins cher
+
 - [ ] rotate_both(a, b, cheapest) - aligne cheapest et target avec rr/rrr
+
 - [ ] push_a_to_b(a, b) - push le cheapest de A vers B
+
 
 ### PHASE 3: Push B → A
 - [ ] get_target_a(node_b, a) - trouve où placer node_b dans A

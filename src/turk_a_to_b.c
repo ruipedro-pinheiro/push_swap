@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:19:59 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/17 15:14:55 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/17 16:21:34 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,37 @@ void	calc_push_price(t_stack *node, t_stack *target)
 		node->push_price = ft_listcount(&node) - node->position + 1;
 		target->push_price = target->position + 1;
 	}
+}
+
+void	init_nodes_a(t_stack **a, t_stack **b)
+{
+	t_stack	*node;
+
+	node = *a;
+	while (1)
+	{
+		get_target_b(node, b);
+		calc_push_price(node, node->target_node);
+		node = node->next;
+		if (node == *a)
+			break ;
+	}
+}
+
+void	set_cheapest(t_stack **stack)
+{
+	t_stack	*node;
+	t_stack	*cheapest;
+
+	node = *stack;
+	cheapest = node;
+	while (1)
+	{
+		if (node->push_price < cheapest->push_price)
+			cheapest = node;
+		node = node->next;
+		if (node == *stack)
+			break ;
+	}
+	cheapest->cheapest = true;
 }

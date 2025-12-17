@@ -6,7 +6,7 @@
 <!-- By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+       -->
 <!--                                              +#+#+#+#+#+   +#+          -->
 <!-- Created: 2025/12/16 13:30:15 by rpinheir          #+#    #+#            -->
-<!-- Updated: 2025/12/17 15:14:43 by rpinheir         ###   ########.ch      -->
+<!-- Updated: 2025/12/17 16:18:21 by rpinheir         ###   ########.ch      -->
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 
@@ -94,7 +94,7 @@ src/
 
 - [X] calc_push_price(node, target) - calcule coût avec rr/rrr
 
-- [ ] init_nodes_a(a, b) - setup target_node + push_price pour chaque node de A
+- [X] init_nodes_a(a, b) - setup target_node + push_price pour chaque node de A
 
 - [ ] set_cheapest(stack) - marque le node le moins cher
 

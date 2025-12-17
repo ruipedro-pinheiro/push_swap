@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:19:59 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/16 19:43:32 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/17 15:14:55 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	get_target_b(t_stack *node_a, t_stack **b)
 	min = node;
 	while (1)
 	{
-		if (node->value > node_a->value && node->value < min)
+		if (node->value > node_a->value && node->value < min->value)
 			target = node;
 		if (node == *b)
 			break ;
@@ -32,23 +32,25 @@ void	get_target_b(t_stack *node_a, t_stack **b)
 
 void	calc_push_price(t_stack *node, t_stack *target)
 {
-	int		price;
-	t_stack	*stack;
-	t_stack	*target_stack;
-
-	stack = node;
-	target_stack = target;
-	price = 0;
-	if (!stack)
-		price++;
-	if (target == stack)
-		price++;
-	while (1)
+	if (node->above_median && target->above_median)
 	{
-		if (node->target_node == target_stack)
-			break ;
-		if (price > ft_listcount(&target_stack) / 2)
-			price = ft_listcount(&target_stack) / 2;
-		price++;
+		node->push_price = node->position + 1;
+		target->push_price = target->position + 1;
+	}
+	else if (!node->above_median && !target->above_median)
+	{
+		node->push_price = ft_listcount(&node) - node->position + 1;
+		target->push_price = ft_listcount(&target) - node->position + 1;
+	}
+	// et maintenant si node est au dessus et target en dessous
+	if (node->above_median && !target->above_median)
+	{
+		node->push_price = node->position + 1;
+		target->push_price = ft_listcount(&target) - node->position + 1;
+	}
+	else if (!node->above_median && target->above_median)
+	{
+		node->push_price = ft_listcount(&node) - node->position + 1;
+		target->push_price = target->position + 1;
 	}
 }

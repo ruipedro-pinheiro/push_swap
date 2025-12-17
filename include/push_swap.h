@@ -35,4 +35,5 @@ void				push(t_stack **dest, t_stack **source);
 void				reverse_rotate(t_stack **stack);
 void				rotate(t_stack **stack);
 void				append_node(t_stack **stack, int value);
+void				pos_change(t_stack **stack);
 #endif

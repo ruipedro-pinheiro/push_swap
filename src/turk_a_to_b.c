@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:19:59 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/17 16:21:34 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/17 17:42:57 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,31 @@ void	set_cheapest(t_stack **stack)
 			break ;
 	}
 	cheapest->cheapest = true;
+}
+
+void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+	int	i;
+	int	min;
+	int	rest;
+
+	i = 0;
+	if (cheapest->position < cheapest->target_node->position)
+	{
+		min = cheapest->position;
+		rest = cheapest->target_node->position - cheapest->position;
+	}
+	min = cheapest->target_node->position;
+	rest = cheapest->position - cheapest->target_node->position;
+	// on fait l'operation rrr le nombre de fois de la poisiton la plus petite
+	if (cheapest->above_median && cheapest->target_node->above_median)
+	{
+		while (i++ <= min)
+			rrr(a, b);
+	}
+	else
+	{
+		while (i++ <= min)
+			rr(a, b);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:19:34 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/16 12:19:35 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/17 17:18:10 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,11 @@ void	rb(t_stack **b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack **a, t_stack **b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }

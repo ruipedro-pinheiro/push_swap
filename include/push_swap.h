@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 12:58:16 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/16 12:58:16 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/17 17:19:42 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,12 @@ void				reverse_rotate(t_stack **stack);
 void				rotate(t_stack **stack);
 void				append_node(t_stack **stack, int value);
 void				pos_change(t_stack **stack);
+
+void				rr(t_stack **a, t_stack **b);
+void				rb(t_stack **b);
+void				ra(t_stack **a);
+
+void				rra(t_stack **a);
+void				rrb(t_stack **b);
+void				rrr(t_stack **a, t_stack **b);
 #endif

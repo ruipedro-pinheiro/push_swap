@@ -100,17 +100,20 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 		min = cheapest->position;
 		rest = cheapest->target_node->position - cheapest->position;
 	}
-	min = cheapest->target_node->position;
-	rest = cheapest->position - cheapest->target_node->position;
+	else
+	{
+		min = cheapest->target_node->position;
+		rest = cheapest->position - cheapest->target_node->position;
+	}
 	// on fait l'operation rrr le nombre de fois de la poisiton la plus petite
 	if (cheapest->above_median && cheapest->target_node->above_median)
 	{
 		while (i++ <= min)
-			rrr(a, b);
+			rr(a, b);
 	}
 	else
 	{
 		while (i++ <= min)
-			rr(a, b);
+			rrr(a, b);
 	}
 }

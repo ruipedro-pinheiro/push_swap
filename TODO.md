@@ -40,8 +40,6 @@ src/
 
 - [? ] rotate_both(a, b, cheapest) - aligne cheapest et target avec rr/rrr
 
-	push_a_to_b(a, b) alresdy possible with push(a,b);
-
 
 ### PHASE 3: Push B → A
 - [ ] get_target_a(node_b, a) - trouve où placer node_b dans A

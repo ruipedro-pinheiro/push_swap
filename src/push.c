@@ -33,18 +33,19 @@ void	push(t_stack **dest, t_stack **source)
 	first_node_source->next->prev = first_node_source->prev;
 	if (!dest || !*dest)
 	{
-		*dest = first_node_source;
-		first_node_dest = *dest;
-		first_node_dest->prev = first_node_dest;
-		first_node_dest->next = first_node_dest;
+		first_node_source->prev = first_node_source;
+		first_node_source->next = first_node_source;
 	}
 	else
 	{
 		first_node_dest = *dest;
-		first_node_dest->prev->next = first_node_source;
+		first_node_source->next = first_node_dest;
+		first_node_source->prev = first_node_dest->prev;
+		first_node_source->prev->next = first_node_source;
 		first_node_dest->prev = first_node_source;
 	}
 	*source = first_node_source->next;
+	*dest = first_node_source;
 	pos_change(source);
 	pos_change(dest);
 }

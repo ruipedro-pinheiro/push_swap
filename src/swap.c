@@ -31,9 +31,11 @@ void	swap(t_stack **stack)
 	first_node = tmp;
 	second_node = first_node->next;
 	first_node->next = second_node->next;
+	first_node->next->prev = first_node;
 	first_node->prev = second_node;
 	second_node->next = tmp;
 	second_node->prev = tmp->prev;
+	second_node->prev->next = second_node;
 	*stack = second_node;
 }
 

@@ -24,6 +24,7 @@ void	get_target_b(t_stack *node_a, t_stack **b)
 	{
 		if (node->value > node_a->value && node->value < min->value)
 			target = node;
+		node = node->next;
 		if (node == *b)
 			break ;
 	}
@@ -40,13 +41,13 @@ void	calc_push_price(t_stack *node, t_stack *target)
 	else if (!node->above_median && !target->above_median)
 	{
 		node->push_price = ft_listcount(&node) - node->position + 1;
-		target->push_price = ft_listcount(&target) - node->position + 1;
+		target->push_price = ft_listcount(&target) - target->position + 1;
 	}
 	// et maintenant si node est au dessus et target en dessous
 	if (node->above_median && !target->above_median)
 	{
 		node->push_price = node->position + 1;
-		target->push_price = ft_listcount(&target) - node->position + 1;
+		target->push_price = ft_listcount(&target) - target->position + 1;
 	}
 	else if (!node->above_median && target->above_median)
 	{
@@ -92,20 +93,16 @@ void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	int	i;
 	int	min;
-	int	rest;
 
 	i = 0;
 	if (cheapest->position < cheapest->target_node->position)
 	{
 		min = cheapest->position;
-		rest = cheapest->target_node->position - cheapest->position;
 	}
 	else
 	{
 		min = cheapest->target_node->position;
-		rest = cheapest->position - cheapest->target_node->position;
 	}
-	// on fait l'operation rrr le nombre de fois de la poisiton la plus petite
 	if (cheapest->above_median && cheapest->target_node->above_median)
 	{
 		while (i++ <= min)

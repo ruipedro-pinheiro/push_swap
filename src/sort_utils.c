@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 12:00:00 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/26 12:00:00 by rpinheir         ###   ########.ch       */
+/*   Updated: 2025/12/26 14:21:11 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	rotate_both_rr(t_stack **a, t_stack **b, t_stack *node, t_stack *target)
 }
 
 void	rotate_both_rrr(t_stack **a, t_stack **b, t_stack *node,
-	t_stack *target)
+		t_stack *target)
 {
 	while (*a != node && *b != target)
 		rrr(a, b);

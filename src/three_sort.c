@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   three_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+
-	+#+        */
+/*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 17:53:22 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/11 17:56:54 by rpinheir         ###   ########.ch       */
+/*   Created: 2025/12/26 14:21:21 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/12/26 14:21:25 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

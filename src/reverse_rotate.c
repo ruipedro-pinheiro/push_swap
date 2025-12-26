@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.ch>    +#+  +:+
-		+#+        */
+/*   By: rpinheir <rpinhier@student.42Lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 14:22:40 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/12/10 14:22:47 by rpinheir         ###   ########.ch       */
+/*   Created: 2025/12/26 14:21:51 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/12/26 14:21:53 by rpinheir         ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 

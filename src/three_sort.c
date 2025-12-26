@@ -26,10 +26,10 @@ void	three_sort(t_stack **stack)
 	first_node = *stack;
 	if (first_node->value > first_node->next->value
 		&& first_node->prev->value < first_node->value)
-		rotate(stack);
+		ra(stack);
 	else if (first_node->next->value > first_node->prev->value)
-		reverse_rotate(stack);
+		rra(stack);
 	first_node = *stack;
 	if (first_node->value > first_node->next->value)
-		swap(stack);
+		sa(stack);
 }

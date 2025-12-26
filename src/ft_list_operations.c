@@ -89,3 +89,22 @@ void	append_node(t_stack **stack, int value)
 	}
 	node->value = value;
 }
+
+void	pos_change(t_stack **stack)
+{
+	t_stack	*node;
+	int		i;
+
+	if (!*stack || !stack)
+		return ;
+	i = 0;
+	node = *stack;
+	while (1)
+	{
+		node->position = i;
+		node = node->next;
+		i++;
+		if (node == *stack)
+			break ;
+	}
+}

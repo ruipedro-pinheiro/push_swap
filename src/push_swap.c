@@ -92,11 +92,15 @@ void	arg_parser(t_stack **a, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
-	(void)argc;
+	b = NULL;
 	if (argc < 2)
 		return (0);
 	arg_parser(&a, argv);
+	if (!is_sorted(a))
+		sort_stack(&a, &b);
+	free_stack(&a);
 	return (0);
 }

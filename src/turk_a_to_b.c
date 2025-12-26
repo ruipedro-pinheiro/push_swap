@@ -12,59 +12,78 @@
 
 #include "../include/push_swap.h"
 
+/*
+** Find target in B for node from A.
+** B is kept in descending order.
+** Target = largest node in B that is SMALLER than node_a.
+** If node_a is smaller than all B, target = max of B.
+*/
 void	get_target_b(t_stack *node_a, t_stack **b)
 {
-	t_stack	*target;
 	t_stack	*node;
-	t_stack	*min;
+	t_stack	*target;
+	int		best_match;
 
 	node = *b;
-	min = node;
+	target = NULL;
+	best_match = INT_MIN;
 	while (1)
 	{
-		if (node->value > node_a->value && node->value < min->value)
+		if (node->value < node_a->value && node->value > best_match)
+		{
+			best_match = node->value;
 			target = node;
+		}
 		node = node->next;
 		if (node == *b)
 			break ;
 	}
+	if (!target)
+		target = find_max(*b);
 	node_a->target_node = target;
 }
 
-void	calc_push_price(t_stack *node, t_stack *target)
+/*
+** Calculate total cost to push node from A to B.
+** Cost = rotations for A + rotations for B (or max if same direction).
+*/
+void	calc_push_price(t_stack *node, t_stack *target, int size_a, int size_b)
 {
-	if (node->above_median && target->above_median)
+	int	cost_a;
+	int	cost_b;
+
+	if (node->above_median)
+		cost_a = node->position;
+	else
+		cost_a = size_a - node->position;
+	if (target->above_median)
+		cost_b = target->position;
+	else
+		cost_b = size_b - target->position;
+	if (node->above_median == target->above_median)
 	{
-		node->push_price = node->position + 1;
-		target->push_price = target->position + 1;
+		if (cost_a > cost_b)
+			node->push_price = cost_a;
+		else
+			node->push_price = cost_b;
 	}
-	else if (!node->above_median && !target->above_median)
-	{
-		node->push_price = ft_listcount(&node) - node->position + 1;
-		target->push_price = ft_listcount(&target) - target->position + 1;
-	}
-	// et maintenant si node est au dessus et target en dessous
-	if (node->above_median && !target->above_median)
-	{
-		node->push_price = node->position + 1;
-		target->push_price = ft_listcount(&target) - target->position + 1;
-	}
-	else if (!node->above_median && target->above_median)
-	{
-		node->push_price = ft_listcount(&node) - node->position + 1;
-		target->push_price = target->position + 1;
-	}
+	else
+		node->push_price = cost_a + cost_b;
 }
 
 void	init_nodes_a(t_stack **a, t_stack **b)
 {
 	t_stack	*node;
+	int		size_a;
+	int		size_b;
 
+	size_a = ft_listcount(a);
+	size_b = ft_listcount(b);
 	node = *a;
 	while (1)
 	{
 		get_target_b(node, b);
-		calc_push_price(node, node->target_node);
+		calc_push_price(node, node->target_node, size_a, size_b);
 		node = node->next;
 		if (node == *a)
 			break ;
@@ -87,30 +106,4 @@ void	set_cheapest(t_stack **stack)
 			break ;
 	}
 	cheapest->cheapest = true;
-}
-
-void	rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
-{
-	int	i;
-	int	min;
-
-	i = 0;
-	if (cheapest->position < cheapest->target_node->position)
-	{
-		min = cheapest->position;
-	}
-	else
-	{
-		min = cheapest->target_node->position;
-	}
-	if (cheapest->above_median && cheapest->target_node->above_median)
-	{
-		while (i++ <= min)
-			rr(a, b);
-	}
-	else
-	{
-		while (i++ <= min)
-			rrr(a, b);
-	}
 }

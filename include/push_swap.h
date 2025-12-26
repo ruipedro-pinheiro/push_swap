@@ -44,4 +44,44 @@ void				ra(t_stack **a);
 void				rra(t_stack **a);
 void				rrb(t_stack **b);
 void				rrr(t_stack **a, t_stack **b);
+
+/* swap.c */
+void				sa(t_stack **a);
+void				sb(t_stack **b);
+void				ss(t_stack **a, t_stack **b);
+
+/* push.c */
+void				pa(t_stack **a, t_stack **b);
+void				pb(t_stack **a, t_stack **b);
+
+/* three_sort.c */
+void				three_sort(t_stack **stack);
+
+/* turk_utils.c */
+int					is_sorted(t_stack *stack);
+t_stack				*find_min(t_stack *stack);
+t_stack				*find_max(t_stack *stack);
+void				set_median(t_stack *stack);
+
+/* turk_a_to_b.c */
+void				init_nodes_a(t_stack **a, t_stack **b);
+void				set_cheapest(t_stack **stack);
+
+/* turk_b_to_a.c */
+void				init_nodes_b(t_stack **a, t_stack **b);
+void				rotate_a_to_top(t_stack **a, t_stack *node);
+void				rotate_b_to_top(t_stack **b, t_stack *node);
+
+/* sort.c */
+void				sort_stack(t_stack **a, t_stack **b);
+
+/* sort_utils.c */
+t_stack				*get_cheapest(t_stack *stack);
+void				reset_cheapest(t_stack *stack);
+void				rotate_both_rr(t_stack **a, t_stack **b, t_stack *n,
+						t_stack *t);
+void				rotate_both_rrr(t_stack **a, t_stack **b, t_stack *n,
+						t_stack *t);
+void				move_and_push(t_stack **a, t_stack **b, t_stack *c);
+
 #endif

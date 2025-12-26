@@ -85,6 +85,3 @@ void	set_median(t_stack *stack)
 			break ;
 	}
 }
-void	rotate_to_top()
-{
-}

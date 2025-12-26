@@ -12,40 +12,47 @@
 
 #include "../include/push_swap.h"
 
-void	pos_change(t_stack **stack);
-
-/*
-** @brief Pushes the top element from source stack to destination stack.
-** @param dest Pointer to the destination stack.
-** @param source Pointer to the source stack.
-** @note Moves the first node from source to the top of dest.
-** @note Updates the prev/next pointers for circular doubly linked list.
-*/
-void	push(t_stack **dest, t_stack **source)
+static void	unlink_source(t_stack **source, t_stack *node)
 {
-	t_stack	*first_node_dest;
-	t_stack	*first_node_source;
+	if (node->next == node)
+		*source = NULL;
+	else
+	{
+		node->prev->next = node->next;
+		node->next->prev = node->prev;
+		*source = node->next;
+	}
+}
 
-	if (!source || !*source)
-		return ;
-	first_node_source = *source;
-	first_node_source->prev->next = first_node_source->next;
-	first_node_source->next->prev = first_node_source->prev;
+static void	link_to_dest(t_stack **dest, t_stack *node)
+{
+	t_stack	*first;
+
 	if (!dest || !*dest)
 	{
-		first_node_source->prev = first_node_source;
-		first_node_source->next = first_node_source;
+		node->prev = node;
+		node->next = node;
 	}
 	else
 	{
-		first_node_dest = *dest;
-		first_node_source->next = first_node_dest;
-		first_node_source->prev = first_node_dest->prev;
-		first_node_source->prev->next = first_node_source;
-		first_node_dest->prev = first_node_source;
+		first = *dest;
+		node->next = first;
+		node->prev = first->prev;
+		node->prev->next = node;
+		first->prev = node;
 	}
-	*source = first_node_source->next;
-	*dest = first_node_source;
+	*dest = node;
+}
+
+void	push(t_stack **dest, t_stack **source)
+{
+	t_stack	*node;
+
+	if (!source || !*source)
+		return ;
+	node = *source;
+	unlink_source(source, node);
+	link_to_dest(dest, node);
 	pos_change(source);
 	pos_change(dest);
 }
@@ -60,23 +67,4 @@ void	pb(t_stack **a, t_stack **b)
 {
 	push(b, a);
 	write(1, "pb\n", 3);
-}
-
-void	pos_change(t_stack **stack)
-{
-	t_stack	*node;
-	int		i;
-
-	if (!*stack || !stack)
-		return ;
-	i = 0;
-	node = *stack;
-	while (1)
-	{
-		node->position = i;
-		node = node->next;
-		i++;
-		if (node == *stack)
-			break ;
-	}
 }

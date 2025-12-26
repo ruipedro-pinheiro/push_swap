@@ -21,22 +21,22 @@
 */
 void	swap(t_stack **stack)
 {
-	t_stack	*first_node;
-	t_stack	*second_node;
-	t_stack	*tmp;
+	t_stack	*first;
+	t_stack	*second;
+	t_stack	*last;
 
-	tmp = *stack;
-	if (!tmp || tmp->next == tmp)
+	first = *stack;
+	if (!first || first->next == first)
 		return ;
-	first_node = tmp;
-	second_node = first_node->next;
-	first_node->next = second_node->next;
-	first_node->next->prev = first_node;
-	first_node->prev = second_node;
-	second_node->next = tmp;
-	second_node->prev = tmp->prev;
-	second_node->prev->next = second_node;
-	*stack = second_node;
+	second = first->next;
+	last = first->prev;
+	first->next = second->next;
+	first->next->prev = first;
+	first->prev = second;
+	second->next = first;
+	second->prev = last;
+	last->next = second;
+	*stack = second;
 }
 
 void	sa(t_stack **a)

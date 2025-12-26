@@ -20,12 +20,13 @@ static void	a_to_b(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest;
 
-	if (ft_listcount(a) > 3)
-		pb(a, b);
-	if (ft_listcount(a) > 3)
-		pb(a, b);
 	while (ft_listcount(a) > 3)
 	{
+		if (ft_listcount(b) < 2)
+		{
+			pb(a, b);
+			continue ;
+		}
 		reset_cheapest(*a);
 		pos_change(a);
 		pos_change(b);

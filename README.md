@@ -1,6 +1,10 @@
-*This project has been created as part of the 42 curriculum by rpinheir*
+<p align="center">
+  <img src="banner.png" alt="push_swap banner" width="800"/>
+</p>
 
-# Push_swap - Sorting Algorithms & Complexity
+# Push_swap
+
+*Sorting Algorithms & Complexity - 42 Project*
 
 **Score:** TBD/100
 
@@ -230,14 +234,63 @@ node->prev = node;
 
 ---
 
+## Algorithm Comparison (for the curious)
+
+I spent way too much time researching what other people did for this project. Here's what I found, maybe it'll save you some time.
+
+### The Big Picture
+
+There's basically a "performance ceiling" for each algorithm type. No matter how well you optimize, you won't break through it without switching approaches entirely.
+
+| Algorithm | 500 nums (avg) | Difficulty | Notes |
+|-----------|----------------|------------|-------|
+| Quicksort Ternaire | ~3800 | Hard | The absolute best, requires serious math |
+| Turk / Cost-Based | ~4800-5600 | Medium | What most people use, reliable |
+| LIS + Insertion | ~4500-5500 | Medium | Good for already partially sorted inputs |
+| Radix Sort | ~5700-6800 | Easy | Simple to code but meh performance |
+
+### Actual Numbers from Real Repos
+
+I dug through a bunch of GitHub repos to get real benchmarks. Some people don't document their results (why??) so there are gaps.
+
+**Top performers (< 4200 ops for 500):**
+
+[ulsgks](https://github.com/ulsgks/push_swap) holds the crown with Quicksort Ternaire: 3680 best, 3784 average, 3871 worst. Tested on 10,000 samples. The guy also wrote [an excellent Medium article](https://medium.com/@ulysse.gks/push-swap-in-less-than-4200-operations-c292f034f6c0) explaining everything.
+
+[TheRedShip](https://github.com/TheRedShip/42-push-swap) uses median + insertion and gets under 4700 consistently.
+
+**Solid middle ground (4200-5500 ops):**
+
+[duarte3333](https://github.com/duarte3333/Push_Swap) documented actual stats: 595 average for 100 nums, 4806 for 500. Cost-based algorithm with good visualizations in the README.
+
+[jiricodes](https://github.com/jiricodes/push_swap) uses a quicksort/insertsort hybrid. No published numbers but clean code to read.
+
+**Radix implementations (won't get you 5/5 on 500 nums):**
+
+[to0nsa](https://to0nsa.github.io/push_swap/) has a clean writeup on Radix: ~855 for 100, ~5740 for 500. Over the 5500 threshold so only 4/5 points.
+
+[madebypixel02](https://github.com/madebypixel02/push_swap) is honest about Radix limitations: 1025 for 100, 6756 for 500. Same deal, 4/5 points max.
+
+### Why I Chose Turk
+
+Quicksort Ternaire would give better numbers but honestly? I wanted to understand what I was coding. Turk is intuitive once it clicks: calculate the cost of every possible move, pick the cheapest, repeat. You can actually visualize what's happening.
+
+For 100% you just need to stay under 700 (for 100 nums) and 5500 (for 500 nums). The 125% comes from the bonus checker, not from having a faster algorithm.
+
+### If You Want to Go Further
+
+The [42 Cursus GitBook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap) has a decent overview of different approaches. Dan Sylvain's [blog post](https://dansylvain.com/blog/algorithm/my-implementation-of-the-42-push-swap-project) explains LIS really well if you want to try that route.
+
+---
+
 ## Resources
 
-- [Oceano's video and comments (YouTube)](https://www.youtube.com/watch?v=wRvipSG4Mmk) 
-  Very good video, but with some flaws, the comments below the video though are SUPER helpful, some are alerting Oceano's live code, others giving exceptionally good tips. 
+- [Oceano's video and comments (YouTube)](https://www.youtube.com/watch?v=wRvipSG4Mmk)
+  Very good video, but with some flaws, the comments below the video though are SUPER helpful, some are alerting Oceano's live code, others giving exceptionally good tips.
 
 - [Gitbook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap/building-the-thing) It is very good for a start but it lacks something that i couldn't "click"
 
-- [Medium Article by Ali Ogun](https://medium.com/@ayogun/push-swap-c1f5d2d41e97) 
+- [Medium Article by Ali Ogun](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
 	-A gold mine, actually very good, i was following this all along my project.
 
 - [Github Readme Instructions](https://github.com/alx-sch/push_swap?tab=readme-ov-file)

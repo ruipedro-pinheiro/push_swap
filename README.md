@@ -10,11 +10,11 @@
 
 ## About the Project
 
-`push_swap` is a sorting algorithm project where we must sort a stack of integers using a very limited set of instructions. The goal isn't just to sort, but to sort using the **minimum number of operations** possible.
+`push_swap` is a sorting algorithm project where we must sort a stack of integers using a limited set of instructions. We need to be efficient and "greedy", not just code a working algorithm.
 
-We are graded on efficiency:
-- **100 Numbers:** Target < 700 operations
-- **500 Numbers:** Target < 5500 operations
+Performance targets:
+- **100 Numbers:** < 700 operations
+- **500 Numbers:** < 5500 operations
 
 ---
 

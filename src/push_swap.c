@@ -19,7 +19,7 @@ void	free_matrix(char **argv)
 	int	i;
 
 	i = 0;
-	if (argv == NULL || *argv == NULL)
+	if (argv == NULL)
 		return ;
 	while (argv[i])
 		free(argv[i++]);

@@ -1,3 +1,5 @@
+*This project has been created as part of the 42 curriculum by rpinheir.*
+
 <p align="center">
   <img src="banner.png" alt="push_swap banner" width="800"/>
 </p>
@@ -6,9 +8,7 @@
 
 *Sorting Algorithms & Complexity - 42 Project*
 
-**Score:** TBD/100
-
-## About the Project
+## Description
 
 `push_swap` is a sorting algorithm project where we must sort a stack of integers using a limited set of instructions. We need to be efficient and "greedy", not just code a working algorithm.
 
@@ -79,7 +79,7 @@ Using a **circular doubly linked list** allows for **O(1)** complexity when acce
 
 ---
 
-## Usage
+## Instructions
 
 ### Compilation
 ```bash
@@ -102,6 +102,7 @@ Recommended tester/visualiser:
 [My favorite](https://github.com/obenchkroune/push_swap_visualizer)
 And the
 [Most used](https://github.com/o-reo/push_swap_visualizer)
+
 ---
 
 ## Available Operations
@@ -188,12 +189,6 @@ Your parser must handle both single arguments and multi-arg with quoted strings.
 
 ---
 
-## Development Status
-
-See `TODO.md` for current progress, bugs, and pending tasks.
-
----
-
 ## Project Structure
 
 - `src/`: Source files containing stack operations and main logic
@@ -205,15 +200,15 @@ See `TODO.md` for current progress, bugs, and pending tasks.
 
 ## Key Learnings
 
-### Double Pointeur (`t_stack **stack`)
-- `stack` = le pointeur vers pointeur lui-même
-- `*stack` = le pointeur vers le premier node (ou NULL si vide)
-- `**stack` = le premier node lui-même
-- Check toujours `if (!stack || !*stack)` avant de déréférencer
+### Double Pointer (`t_stack **stack`)
+- `stack` = the pointer-to-pointer itself
+- `*stack` = the pointer to the first node (or NULL if empty)
+- `**stack` = the first node itself
+- Always check `if (!stack || !*stack)` before dereferencing
 
 ### Circular List Patterns
 ```c
-// Parcourir tous les nodes
+// Traverse all nodes
 node = *stack;
 while (1)
 {
@@ -223,11 +218,11 @@ while (1)
         break;
 }
 
-// Free une liste circulaire
-(*stack)->prev->next = NULL;  // Casse le cercle d'abord
-while (current) { ... }       // Puis free normalement
+// Free a circular list
+(*stack)->prev->next = NULL;  // Break the circle first
+while (current) { ... }       // Then free normally
 
-// Node seul pointe sur lui-même
+// Single node points to itself
 node->next = node;
 node->prev = node;
 ```

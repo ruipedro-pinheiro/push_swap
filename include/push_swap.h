@@ -24,10 +24,12 @@ typedef struct stack
 	int				position;
 	bool			cheapest;
 	bool			above_median;
+	bool			is_sorted;
 	struct stack	*target_node;
 	struct stack	*next;
 	struct stack	*prev;
 }					t_stack;
+void				search_for_LIS(t_stack **stack);
 void				free_stack(t_stack **stack);
 int					ft_listcount(t_stack **stack);
 void				swap(t_stack **stack);

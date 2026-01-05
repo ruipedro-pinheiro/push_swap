@@ -29,7 +29,6 @@ static void	a_to_b(t_stack **a, t_stack **b)
 			continue ;
 		}
 		reset_cheapest(*a);
-		search_for_LIS(a);
 		pos_change(a);
 		pos_change(b);
 		set_median(*a);
@@ -98,6 +97,7 @@ void	sort_stack(t_stack **a, t_stack **b)
 	if (is_sorted(a) == 0)
 	{
 		a_to_b(a, b);
+		three_sort(a);
 		b_to_a(a, b);
 		final_rotate(a);
 	}
@@ -110,13 +110,12 @@ int	is_sorted(t_stack **stack)
 	node = *stack;
 	if (is_rot_sorted(*stack) == 0)
 		return (0);
-	while (1)
+	while (node->next != *stack)
 	{
 		if (node->value < node->next->value && node->value > node->prev->value)
 			return (0);
 		node = node->next;
-		if (node == *stack)
-			break ;
+		break ;
 	}
 	return (1);
 }

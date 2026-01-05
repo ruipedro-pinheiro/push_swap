@@ -153,12 +153,14 @@ Your parser must handle both single arguments and multi-arg with quoted strings.
 
 ---
 
-## Performance Targets
+## Performance benchmarks
+Benchmarks : 500 numbers, 500 iterations (bigger range)
+- *Worst* = 5510 operations
+- *Median* = 5117 operations
+- *Best* = 4692 operations
+- *Precision* = 137.5 instructions
+- *Goal* = 99 % sous 5500 (1 above)
 
-- **3 Numbers:** 2-3 moves max
-- **5 Numbers:** ~12 moves max
-- **100 Numbers:** ~600 moves (target < 700)
-- **500 Numbers:** ~4500 moves (target < 5500)
 
 ---
 

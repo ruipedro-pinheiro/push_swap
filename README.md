@@ -20,11 +20,11 @@ Performance targets:
 
 ## The Algorithm: "The Turk"
 
-After researching various sorting algorithms like **Quicksort** and **Bogosort** (too slow!), I decided to implement the **Turk Algorithm**.
+After researching various sorting algorithms like **Quicksort** and **Bogosort** (too slow or inneficient), I decided to implement the **Turk Algorithm**.
 
 ### Why the Turk?
 
-Standard algorithms like Quicksort are great for arrays where swapping is cheap. In `push_swap`, every move counts. The Turk Algorithm is a "Cost-Based" or "Greedy" algorithm that is highly optimized for this specific ruleset.
+Standard algorithms like Quicksort are great for arrays where swapping is cheap. In `push_swap`, every move counts. The Turk Algorithm is a "Cost-Based" or "Greedy" algorithm that is highly optimized for this specific ruleset. I also wanted a sort of a challenge, and not being introduced to algorithms already i prefered to target a more difficult algorithm, a less used one rather radix which is easier to implement. At the start of the project i know only about quicksort (vaguely) radix and turk.
 
 ### How it Works
 
@@ -128,12 +128,7 @@ When pushing numbers from A to B, check if the number is below the median of B. 
 
 **Expected Result:** ~4500 moves for 500 numbers (instead of 5000+)
 
-### 2. Find Longest Pre-sorted Sequence
-Instead of pushing everything to B, identify the longest sequence of numbers already sorted in A and keep them there. Only push numbers that are out of order.
-
-**Result:** Fewer total operations
-
-### 3. Optimize Cost Calculation with rr/rrr
+### 2. Optimize Cost Calculation with rr/rrr
 When calculating push cost, don't just add `node->position + target->position`. If both nodes need rotation in the same direction, you can use `rr` or `rrr` to move them simultaneously.
 
 **Example:**
@@ -142,7 +137,7 @@ When calculating push cost, don't just add `node->position + target->position`. 
 - Naive cost: 10 + 10 = 20
 - Optimized cost with `rr`: 10
 
-### 4. CRITICAL: atol/atoll Overflow Protection
+### 3. CRITICAL: atol/atoll Overflow Protection
 Using `atol()` or `atoll()` without validation can cause overflow with very large numbers (2^64).
 
 **Solution:** After conversion, verify the number is within `INT_MIN` to `INT_MAX` range:
@@ -246,7 +241,7 @@ There's basically a "performance ceiling" for each algorithm type. No matter how
 
 ### Actual Numbers from Real Repos
 
-I dug through a bunch of GitHub repos to get real benchmarks. Some people don't document their results (why??) so there are gaps.
+I dug through a bunch of GitHub repos to get real benchmarks. Some people don't document their results (what a shame) so there are gaps.
 
 **Top performers (< 4200 ops for 500):**
 
@@ -268,13 +263,9 @@ I dug through a bunch of GitHub repos to get real benchmarks. Some people don't 
 
 ### Why I Chose Turk
 
-Quicksort Ternaire would give better numbers but honestly? I wanted to understand what I was coding. Turk is intuitive once it clicks: calculate the cost of every possible move, pick the cheapest, repeat. You can actually visualize what's happening.
+Quicksort Ternaire would give better numbers but i discovered it while my turk algorithm was almost finished, i did wanted to try to code it but i coded already too much to rollback and change didrections. It will be surely a little side_project to when i have time. The turk algorithm is also very interesting as it is not that "abstract" when the basics are understood (push price, the "cheapest" node, etc...).
 
-For 100% you just need to stay under 700 (for 100 nums) and 5500 (for 500 nums). The 125% comes from the bonus checker, not from having a faster algorithm.
-
-### If You Want to Go Further
-
-The [42 Cursus GitBook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap) has a decent overview of different approaches. Dan Sylvain's [blog post](https://dansylvain.com/blog/algorithm/my-implementation-of-the-42-push-swap-project) explains LIS really well if you want to try that route.
+For 100% i just need to stay under 700 (for 100 nums) and 5500 (for 500 nums). The 125% comes from the bonus checker, not from having a faster algorithm, so redoing all over again would be just plain stupid.
 
 ---
 
@@ -283,10 +274,10 @@ The [42 Cursus GitBook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap) 
 - [Oceano's video and comments (YouTube)](https://www.youtube.com/watch?v=wRvipSG4Mmk)
   Very good video, but with some flaws, the comments below the video though are SUPER helpful, some are alerting Oceano's live code, others giving exceptionally good tips.
 
-- [Gitbook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap/building-the-thing) It is very good for a start but it lacks something that i couldn't "click"
+- [Gitbook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap/building-the-thing) It is very good for a start, but with the time i was fully understanding so i prefered to use other ressources, it may help you or not.
 
 - [Medium Article by Ali Ogun](https://medium.com/@ayogun/push-swap-c1f5d2d41e97)
-	-A gold mine, actually very good, i was following this all along my project.
+	-A gold mine, actually very good, i was following this all along my project so i could remember some details, like "is reverse_rotate clockwise or anti-clockwise ?", the picture diagrams and all schemes really helped me to understand things even further.
 
 - [Github Readme Instructions](https://github.com/alx-sch/push_swap?tab=readme-ov-file)
 	-He actually based himself from the same medium article from Ali Ogun, yet his readme instructions are also VERY good.
@@ -295,7 +286,7 @@ The [42 Cursus GitBook](https://42-cursus.gitbook.io/guide/2-rank-02/push_swap) 
 ### AI Usage
 
 AI (Claude) was used as a learning coach during this project:
-- Reviewing code and pointing out potential issues for me to investigate
+- Made throughrly searches over the web and helped me to find some more precise info of wat i was looking.
 - Asking questions to help me think through problems
 - Explaining concepts when I got stuck
 

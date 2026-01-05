@@ -1,8 +1,4 @@
-*This project has been created as part of the 42 curriculum by rpinheir.*
-
-<p align="center">
-  <img src="banner.png" alt="push_swap banner" width="800"/>
-</p>
+*This project has been created as part of the 42 curriculum by rpinheir.
 
 # Push_swap
 

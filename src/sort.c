@@ -20,6 +20,7 @@ static void	a_to_b(t_stack **a, t_stack **b)
 {
 	t_stack	*cheapest;
 
+	cheapest = *a;
 	while (ft_listcount(a) > 3)
 	{
 		if (ft_listcount(b) < 2)
@@ -28,6 +29,7 @@ static void	a_to_b(t_stack **a, t_stack **b)
 			continue ;
 		}
 		reset_cheapest(*a);
+		search_for_LIS(a);
 		pos_change(a);
 		pos_change(b);
 		set_median(*a);
@@ -77,8 +79,10 @@ static void	final_rotate(t_stack **a)
 */
 void	sort_stack(t_stack **a, t_stack **b)
 {
-	int	size;
+	int		size;
+	t_stack	*node;
 
+	node = *a;
 	size = ft_listcount(a);
 	if (size <= 1 || is_sorted(*a))
 		return ;
@@ -94,7 +98,6 @@ void	sort_stack(t_stack **a, t_stack **b)
 		return ;
 	}
 	a_to_b(a, b);
-	three_sort(a);
 	b_to_a(a, b);
 	final_rotate(a);
 }

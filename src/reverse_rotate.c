@@ -35,6 +35,7 @@ void	reverse_rotate(t_stack **stack)
 		node = node->prev;
 		i++;
 	}
+	node->position = i;
 	*stack = first_node->prev;
 }
 

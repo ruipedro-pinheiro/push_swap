@@ -85,3 +85,29 @@ void	set_median(t_stack *stack)
 			break ;
 	}
 }
+
+void	search_for_LIS(t_stack **stack)
+{
+	t_stack	*last_node;
+	t_stack	*node;
+
+	node = *stack;
+	last_node = node;
+	while (1)
+	{
+		if (node == *stack)
+			break ;
+		if (node->value < node->next->value)
+		{
+			node->is_sorted = true;
+			node->next->is_sorted = true;
+			last_node = node->next;
+		}
+		else if (node->value > last_node->value)
+		{
+			last_node = node;
+			node->is_sorted = true;
+		}
+		node = node->next;
+	}
+}

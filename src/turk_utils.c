@@ -12,21 +12,17 @@
 
 #include "../include/push_swap.h"
 
-int	is_sorted(t_stack *stack)
+int	is_rot_sorted(t_stack *stack)
 {
-	t_stack	*node;
-	t_stack	*first_node;
+	t_stack	*max;
 
 	if (!stack)
 		return (0);
-	first_node = stack;
-	node = first_node;
-	while (node->next != first_node)
-	{
-		if (node->next->value < node->value)
-			return (0);
-		node = node->next;
-	}
+	max = find_max(stack);
+	if (max->next != find_min(stack))
+		return (0);
+	if (stack != find_min(stack))
+		return (0);
 	return (1);
 }
 

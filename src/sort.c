@@ -79,12 +79,10 @@ static void	final_rotate(t_stack **a)
 */
 void	sort_stack(t_stack **a, t_stack **b)
 {
-	int		size;
-	t_stack	*node;
+	int	size;
 
-	node = *a;
 	size = ft_listcount(a);
-	if (size <= 1 || is_sorted(*a))
+	if (size <= 1 || is_sorted(a))
 		return ;
 	if (size == 2)
 	{
@@ -97,7 +95,28 @@ void	sort_stack(t_stack **a, t_stack **b)
 		three_sort(a);
 		return ;
 	}
-	a_to_b(a, b);
-	b_to_a(a, b);
-	final_rotate(a);
+	if (is_sorted(a) == 0)
+	{
+		a_to_b(a, b);
+		b_to_a(a, b);
+		final_rotate(a);
+	}
+}
+
+int	is_sorted(t_stack **stack)
+{
+	t_stack	*node;
+
+	node = *stack;
+	if (is_rot_sorted(*stack) == 0)
+		return (0);
+	while (1)
+	{
+		if (node->value < node->next->value && node->value > node->prev->value)
+			return (0);
+		node = node->next;
+		if (node == *stack)
+			break ;
+	}
+	return (1);
 }

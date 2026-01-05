@@ -60,7 +60,9 @@ void				pb(t_stack **a, t_stack **b);
 void				three_sort(t_stack **stack);
 
 /* turk_utils.c */
-int					is_sorted(t_stack *stack);
+int					is_rot_sorted(t_stack *stack);
+int					is_sorted(t_stack **stack);
+
 t_stack				*find_min(t_stack *stack);
 t_stack				*find_max(t_stack *stack);
 void				set_median(t_stack *stack);

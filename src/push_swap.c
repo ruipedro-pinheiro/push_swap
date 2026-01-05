@@ -99,8 +99,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	arg_parser(&a, argv);
-	if (!is_sorted(a))
-		sort_stack(&a, &b);
+	sort_stack(&a, &b);
 	free_stack(&a);
 	return (0);
 }
